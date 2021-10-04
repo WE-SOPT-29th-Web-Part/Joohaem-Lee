@@ -1,12 +1,564 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
 <body>
-  
+  <header class="header">
+    <a class="header__logo" href="">LOGO</a>
+    <div class="header__nav">
+      <a class="header__search" href=""></a>
+      <button class="header__login">로그인</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <nav class="nav">
+      <div class="nav__links">
+        <a class="nav__link active" href="">
+          <div class="nav__icon nav__icon-trend"></div>
+          <p>트렌딩</p>
+        </a>
+        <a class="nav__link" href="">
+          <div class="nav__icon nav__icon-latest"></div>
+          <p>최신</p>
+        </a>
+        <div class="nav__sorting" href="">
+          <p>이번 달</p>
+          <div class="nav__arrow-down"></div>
+        </div>
+      </div>
+      <div class="nav__show-more"></div>
+    </nav>
+
+    <div class="main__section-wrap">
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="section">
+        <article class="section__box">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link" href="">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      
+    </div>
+  </main>
 </body>
 </html>

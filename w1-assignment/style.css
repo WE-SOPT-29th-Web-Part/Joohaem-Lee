@@ -1,0 +1,334 @@
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  background-color: #F8F9FA;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+div {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* header */
+.header {
+  height: 64px;
+  margin: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header__nav {
+  height: 40px;  
+  display: flex;
+  align-items: center;
+}
+.header .header__search {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-right: 12px;
+  background-image: url("./assets/icons/searchIC.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+.header .header__search:hover {
+  background-color: #eee;
+}
+.header .header__login {
+  width: 80px;
+  height: 32px;
+  background-color: #102027;
+  border: 0;
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.3s background-color;
+}
+.header .header__login:hover {
+  background-color: #888;
+}
+
+/* nav */
+.main {
+  margin: 0 16px;
+}
+.main .nav {
+  height: 48px;
+  margin: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav .nav__links {
+  display: flex;
+  align-items: center;
+}
+.nav .nav__link {
+  display: flex;
+  width: 80px;
+  height: 48px;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+}
+.nav .nav__link.active {
+  border-bottom: 2px solid black;
+  font-weight: 700;
+  color: #102027;
+}
+.nav .nav__icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+.nav .nav__icon-trend {
+  background-image: url("./assets/icons/trending_upIC.svg");
+}
+.nav .nav__icon-latest {
+  background-image: url("./assets/icons/latestIC.svg");
+}
+.nav .nav__sorting {
+  width: 84px;
+  height: 32px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav .nav__sorting:hover {
+  color: #888;
+}
+.nav .nav__arrow-down {
+  width: 24px;
+  height: 24px;
+  background-image: url("./assets/icons/arrow_downIC.svg");
+}
+.nav .nav__show-more {
+  width: 24px;
+  height: 24px;
+  background-image: url("./assets/icons/show_moreIC.svg");
+  cursor: pointer;
+}
+
+/* main */
+.main__section-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.section {
+  width: 100%;
+}
+.section .section__box {
+  margin: 10px;
+  background-color: white;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.section .section__img {
+  border-radius: 3px 3px 0 0;
+  cursor: pointer;
+}
+
+/* section content */
+.section .section__main-box {
+  height: 190px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #F8F9FA;
+}
+.section .section_text-link {
+  flex-basis: 1;
+}
+.section .section__title {
+  margin-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.section .section__content {
+  font-size: 14px;
+  line-height: 21px;
+  color: rgb(73, 80, 87);
+  /* webkit-box 기능 이용 (Flexible Box Model) */
+  display: -webkit-box;
+  /* 넘어가는 텍스트 숨기기 */
+  overflow: hidden;
+  /* ... 표스 */
+  text-overflow: ellipsis;
+  /* 박스의 내용을 세로로 배치함 */
+  -webkit-box-orient: vertical;
+  /* n줄 말줄임을 설정 */
+  -webkit-line-clamp: 3;
+  /* 줄 바꿈이 발생할 수 있게 설정 */
+  word-break: break-all;
+  /* https://snupi.tistory.com/123 */
+}
+.section .section__info {
+  font-size: 12px;
+  line-height: 18px;
+  color: rgb(134, 142, 150);
+}
+
+/* section footer */
+.section .section__footer-box {
+  height: 40px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(33, 37, 41);
+}
+.section .section__user {
+  height: 24px;
+  display: flex;
+  align-content: center;
+  cursor: pointer;
+}
+.section .section__user-img {
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.section .section__user-name {
+  font-size: 12px;
+  line-height: 24px;
+}
+.section .section__user-name b {
+  margin-left: 6px;
+  font-weight: 700;
+}
+.section .section__like {
+  height: 24px;
+  display: flex;
+  align-content: center;
+}
+.section .section__like-img {
+  display: block;
+  width: 12px;
+  height: 24px;
+  background-image: url(./assets/icons/heartIC.svg);
+  background-size: contain;
+  background-position: center;
+  margin-right: 6px;
+}
+.section .section__like-cnt {
+  display: block;
+  font-size: 12px;
+  line-height: 24px;
+}
+
+/* tablet */
+@media screen and (min-width: 768px),
+ screen and (min-height: 768px) and (orientation: landscape) {
+  .section {
+    width: 50%;
+  }
+  .section .section__box {
+    margin: 16px;
+  }
+}
+
+/* pc-3 */
+@media screen and (min-width: 1024px),
+ screen and (min-height: 1024px) and (orientation: landscape) {
+  .header {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  .main {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  .section {
+    width: 33.3%;
+  }
+  .section .section__box {
+    transition: 0.3s margin ease-in-out;
+  }
+  .section .section__box:hover {
+    margin-top: 2px;
+  }
+}
+
+/* pc-4 */
+@media screen and (min-width: 1418px),
+ screen and (min-height: 1418px) and (orientation: landscape) {
+  .header {
+    width: 1418px;
+  }
+  .main {
+    width: 1418px;
+  }
+  .section {
+    width: 25%;
+  }
+}
+
+/* pc-5 */
+@media screen and (min-width: 1886px),
+ screen and (min-height: 1886px) and (orientation: landscape) {
+  .header {
+    width: 1886px;
+  }
+  .main {
+    width: 1886px;
+  }
+  .section {
+    width: 20%;
+  }
+}
