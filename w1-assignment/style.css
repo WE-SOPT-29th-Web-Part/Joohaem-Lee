@@ -192,9 +192,6 @@ div {
   justify-content: space-between;
   border-bottom: 1px solid #F8F9FA;
 }
-.section .section_text-link {
-  flex-basis: 1;
-}
 .section .section__title {
   margin-bottom: 4px;
   font-size: 16px;
