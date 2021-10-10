@@ -61,16 +61,17 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  width: 50%;
-  /* display: none ?????????? */
-  /* visibility: hidden;
-  transition: width 0.3s ease-in-out; */
+  /* display로 구현할 경우, width 조정 없이 바로 사라져 애니메이션 적용이 안 됨 */
+  /* display: none; */
+  width: 0%;
+  visibility: hidden;
+  transition: width 0.3s ease-in-out;
 }
 .todos__today.open,
 .todos__tomorrow.open {
-  /* width: 100%;
-  visibility: visible; */
+  /* display: flex; */
+  width: 100%;
+  visibility: visible;
 }
 .todos__today {
   border-right: 1px solid black;
