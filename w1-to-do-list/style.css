@@ -58,11 +58,19 @@ input {
 }
 .todos__today,
 .todos__tomorrow {
-  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  width: 50%;
+  /* display: none ?????????? */
+  /* visibility: hidden;
+  transition: width 0.3s ease-in-out; */
+}
+.todos__today.open,
+.todos__tomorrow.open {
+  /* width: 100%;
+  visibility: visible; */
 }
 .todos__today {
   border-right: 1px solid black;
