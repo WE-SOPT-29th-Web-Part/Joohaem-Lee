@@ -6,8 +6,9 @@ const items = document.querySelectorAll(".todos__items");
 
 // 리스트 추가 함수
 const onAdd = (index) => {
+  const inputValue = inputs[index].value;
   // console.log(index);
-  if(!inputs[index].value) return;
+  if(!inputValue) return;
   // console.log(index);
   const li = document.createElement("li");
   const p = document.createElement("p");
@@ -18,13 +19,13 @@ const onAdd = (index) => {
   deleteBtn.setAttribute("class", "todos__delete");
 
   deleteBtn.innerText = "❌";
-  p.innerText = inputs[index].value;
+  p.innerText = inputValue;
 
   items[index].appendChild(li);
   li.appendChild(p);
   li.appendChild(deleteBtn);
 
-  inputs[index].value = "";
+  inputValue = "";
 }
 
 // 추가 버튼 클릭
