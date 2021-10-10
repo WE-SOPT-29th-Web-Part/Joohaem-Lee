@@ -13,7 +13,7 @@ const onAdd = (index) => {
   const li = document.createElement("li");
   const p = document.createElement("p");
   const deleteBtn = document.createElement("button");
-
+  
   // class 지정
   li.setAttribute("class", "todos__item");
   p.setAttribute("class", "todos__name");
@@ -22,17 +22,17 @@ const onAdd = (index) => {
   // 텍스트
   deleteBtn.innerText = "❌";
   p.innerText = input.value;
-
+  
   // 삭제 기능
   deleteBtn.addEventListener("click", () => {
     li.remove();
   });
-
+  
   // 추가
   items[index].appendChild(li);
   li.appendChild(p);
   li.appendChild(deleteBtn);
-
+  
   // input 창 초기화
   input.value = "";
 }
@@ -50,3 +50,19 @@ inputs.forEach((input, index) => addEventListener("keyup", event => {
 }));
 
 
+const nav = document.querySelector(".options");
+const todos = document.querySelectorAll(".todos > section");
+
+nav.addEventListener("click", e => {
+  const targetClasses = e.target.classList;
+  if(targetClasses.contains("options__today")) {
+    todos[0].classList.add("open");
+    todos[1].classList.remove("open");
+  } else if(targetClasses.contains("options__tomorrow")) {
+    todos[0].classList.remove("open");
+    todos[1].classList.add("open");
+  } else if(targetClasses.contains("options__both")) {
+    todos[0].classList.add("open");
+    todos[1].classList.add("open");
+  }
+});
