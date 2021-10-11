@@ -329,6 +329,16 @@ li {
 body.no-scroll {
   overflow: hidden;
 }
+/* 이벤트 위임 방지 */
+/* .section__img, 
+.section__main-box,
+.section__text-link, 
+.section__title, .section__content, .section__info,
+.section__footer-box,
+.section__user, .section__user-img, .section__user-name,
+.section__like, .section__like-img, .section__like-cnt {
+  pointer-events: none;
+} */
 
 /* tablet */
 @media screen and (min-width: 768px),

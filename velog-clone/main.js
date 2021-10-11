@@ -29,39 +29,42 @@ initDropdown();
 // modal pop-up
 // 왜 body가 클릭되는 거지??????????????
 const body = document.body;
+const sections = document.querySelectorAll(".section");
 const articles = document.querySelectorAll(".section__box");
+const closeBtns = document.querySelectorAll(".section__close-btn")
 
-const closeModal = (btnNode, articleNode, sectionNode) => {
-  btnNode.classList.remove("active");
-  articleNode.classList.remove("active");
-  sectionNode.classList.remove("active");
+const closeModal = (index, e) => {
+  // 클릭한 index 검사
+  if(closeBtns[index] !== e.target) return;
+
+  // inactive
+  sections[index].classList.remove("active");
+  articles[index].classList.remove("active");
+  closeBtns[index].classList.remove("active");
   body.classList.remove("no-scroll");
 }
 
-const openModal = (e) => {
+const openModal = (index, e) => {
   // 이벤트 위임 사용자 정의
-  let articleBox = e.target;
-  while(!articleBox.classList.contains("section__box"))
-  articleBox = articleBox.parentNode;
-  
-  // overlay
-  const section = articleBox.parentNode;
-  // 모달창 닫기 button
-  const deleteBtn = section.lastElementChild;
+  let targetArticle = e.target;
+  while(!targetArticle.classList.contains("section__box"))
+    targetArticle = targetArticle.parentNode;
+
+  // 클릭한 index 검사
+  if(articles[index] !== targetArticle) return;
 
   // active
-  articleBox.classList.add("active");
-  section.classList.add("active");
-  deleteBtn.classList.add("active");
+  articles[index].classList.add("active");
+  sections[index].classList.add("active");
+  closeBtns[index].classList.add("active");
   body.classList.add("no-scroll");
-
-  // 버튼 이벤트
-  deleteBtn.addEventListener("click", (e) => 
-    closeModal(e.currentTarget, articleBox, section));
 }
 
 const initModal = () => {
-  articles.forEach(() => addEventListener("click", openModal));
+  articles.forEach((a, index) => 
+    addEventListener("click", (e) => openModal(index, e)));
+  closeBtns.forEach((c, index) => 
+    addEventListener("click", (e) => closeModal(index, e)));
 };
 
 initModal();
