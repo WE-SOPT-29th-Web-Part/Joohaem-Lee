@@ -212,6 +212,9 @@ li {
   border-radius: 3px 3px 0 0;
   cursor: pointer;
 }
+.section__close-btn {
+  display: none;
+}
 
 /* section content */
 .section .section__main-box {
@@ -300,6 +303,31 @@ li {
   display: block;
   font-size: 12px;
   line-height: 24px;
+}
+
+/* section modal */
+.section.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.section .section__box.active {
+  width: 30%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.section .section__close-btn.active {
+  display: block;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+body.no-scroll {
+  overflow: hidden;
 }
 
 /* tablet */
