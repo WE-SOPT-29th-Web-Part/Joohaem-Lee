@@ -86,18 +86,28 @@ li {
   margin-top: 8px;
 }
 .header .header__login {
-  width: 80px;
-  height: 32px;
+  width: 6em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #102027;
   border: 0;
   border-radius: 50px;
   color: white;
   font-size: 16px;
   font-weight: 700;
-  transition: 0.3s background-color;
+  transition: background-color 0.3s ease-in-out;
 }
 .header .header__login:hover {
   background-color: #888;
+}
+.header .header__user {
+  margin-left: 1em;
+}
+.header .header__user-img {
+  border-radius: 50%;
+  margin-right: -0.5em;
 }
 
 /* nav */

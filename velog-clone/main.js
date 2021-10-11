@@ -27,7 +27,6 @@ const initDropdown = () => {
 initDropdown();
 
 // modal pop-up
-// 왜 body가 클릭되는 거지??????????????
 const body = document.body;
 const sections = document.querySelectorAll(".section");
 const articles = document.querySelectorAll(".section__box");
@@ -70,3 +69,4 @@ const initModal = () => {
 initModal();
 
 // on & off tags
+
