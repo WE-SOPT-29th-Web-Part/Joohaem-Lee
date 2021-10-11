@@ -1,0 +1,38 @@
+body {
+  background-color: #FBFDFC;
+}
+.form {
+  height: 100vh;
+  background-color: white;
+  padding: 2em;
+}
+.form .form__title {
+  width: 100%;
+  font-size: 2.75rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: rgb(33, 37, 41);
+}
+.form .form__hr {
+  margin: 24px 0 16px 0;
+  width: 64px;
+  height: 6px;
+  color: rgb(73, 80, 87);
+}
+.form .form__tags {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.form .form__input-tag {
+  min-width: 8rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+
+@media screen and (min-width: 1024px),
+ screen and (min-height: 1024px) and (orientation: landscape) {
+  .form {
+    width: 50%;
+  }
+}
