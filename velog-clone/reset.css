@@ -1,3 +1,9 @@
+/* CSS Custom Properties */
+:root {
+  --main-white-color: #F8F9FA;
+  --main-gray-color: #77746F;
+  --main-blue-color: #102027;
+}
 /* reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
