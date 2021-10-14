@@ -1,6 +1,6 @@
 :root {
   --main-white-color: #F8F9FA;
-  --main-gray-color: #888;
+  --main-gray-color: #77746F;
   --main-blue-color: #102027;
 }
 
@@ -66,6 +66,9 @@
   left:auto;
   right: 1px;
   background: var(--main-gray-color);
+}
+.header .header__label-dark:hover {
+  cursor: pointer;
 }
 .header .header__login {
   width: 6em;
@@ -394,6 +397,43 @@ body.no-scroll {
   }
 }
 
-
-
-
+/* prefers-color-scheme */
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--main-gray-color);
+    color: var(--main-white-color);
+  }
+  .header__logo {
+    color: var(--main-white-color);
+  }
+  .header .header__login:hover {
+    background-color: var(--main-white-color);
+    color: var(--main-blue-color);
+  }
+  .header .header__input-dark
+  + .header__label-dark {
+    background: var(--main-white-color);
+  }
+  .header .header__input-dark
+  + .header__label-dark:after {
+    left:auto;
+    right: 1px;
+    background: var(--main-gray-color);
+  }
+  .nav .nav__link {
+    color: var(--main-white-color);
+  }
+  .nav .nav__sorting {
+    color: var(--main-gray-color);
+  }
+  /* .nav 마지막 위치 (cascading) */
+  .nav .material-icons {
+    background: #F8F9FA;
+    border-radius: 50%;
+    color: var(--main-blue-color) !important;
+  }
+  .section .section__box {
+    background: var(--main-white-color);
+  }
+}
