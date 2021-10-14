@@ -1,3 +1,9 @@
+:root {
+  --main-white-color: #F8F9FA;
+  --main-gray-color: #888;
+  --main-blue-color: #102027;
+}
+
 /* header */
 .header {
   height: 64px;
@@ -21,7 +27,7 @@
   border-radius: 50%;
 }
 .header .header__search:hover {
-  background-color: #eee;
+  background-color: white;
 }
 .header .header__search .material-icons {
   margin-top: 8px;
@@ -36,7 +42,7 @@
   width: 2.375em;
   height: 1.25em;
   border-radius: calc(1.25em / 2);
-  background: #888;
+  background: var(--main-gray-color);
   color: transparent;
   transition: all 0.3 ease-in-out;
 }
@@ -53,13 +59,13 @@
 }
 .header .header__input-dark:checked
 + .header__label-dark {
-  background: #F8F9FA;
+  background: var(--main-white-color);
 }
 .header .header__input-dark:checked
 + .header__label-dark:after {
   left:auto;
   right: 1px;
-  background: #888;
+  background: var(--main-gray-color);
 }
 .header .header__login {
   width: 6em;
@@ -67,16 +73,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #102027;
+  background-color: var(--main-blue-color);
   border: 0;
   border-radius: 50px;
-  color: #F8F9FA;
+  color: var(--main-white-color);
   font-size: 16px;
   font-weight: 700;
   transition: background-color 0.3s ease-in-out;
 }
 .header .header__login:hover {
-  background-color: #888;
+  background-color: var(--main-gray-color);
 }
 .header .header__user {
   margin-left: 1em;
@@ -107,12 +113,12 @@
   height: 48px;
   justify-content: center;
   align-items: center;
-  color: #888;
+  color: var(--main-gray-color);
 }
 .nav .nav__link.active {
   border-bottom: 2px solid black;
   font-weight: 700;
-  color: #102027;
+  color: var(--main-blue-color);
 }
 .nav .nav__link-text {
   margin-left: 6px;
@@ -125,7 +131,7 @@
 .nav .nav__sorting {
   width: 84px;
   height: 32px;
-  background-color: white;
+  background-color: var(--main-white-color);
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 5px;
   display: flex;
@@ -138,7 +144,7 @@
   position: relative;
 }
 .nav .nav__sorting:hover {
-  color: #888;
+  color: var(--main-gray-color);
 }
 .nav .nav__show-more {
   cursor: pointer;
@@ -210,7 +216,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid #F8F9FA;
+  border-bottom: 1px solid var(--main-white-color);
 }
 .section .section__title {
   margin-bottom: 4px;
