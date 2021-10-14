@@ -60,3 +60,11 @@ input {
 	outline: none;
 	border: none;
 }
+.visually_hidden {
+	position: absolute;
+	overflow:hidden;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	opacity: 0;
+}
