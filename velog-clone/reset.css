@@ -4,6 +4,28 @@
   --main-gray-color: #77746F;
   --main-blue-color: #102027;
 }
+:root[color-theme='light'] {
+  --main-bg-color: #F8F9FA;
+  --second-bg-color: #102027;
+  --third-bg-color: #77746F;
+  --forth-bg-color: white;
+  --main-color: black;
+  --second-color: #77746F;
+  --third-color: #102027;
+  --forth-color: #F8F9FA;
+  --fifth-color: #F8F9FA;
+}
+:root[color-theme='dark'] {
+  --main-bg-color: #77746F;
+  --second-bg-color: #F8F9FA;
+  --third-bg-color: #102027;
+  --forth-bg-color: #eee;
+  --main-color: #F8F9FA;
+  --second-color: #F8F9FA;
+  --third-color: #77746F;
+  --forth-color: #102027;
+  --fifth-color: #F8F9FA;
+}
 /* reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -31,7 +53,6 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  background-color: #F8F9FA;
 }
 ol, ul {
 	list-style: none;

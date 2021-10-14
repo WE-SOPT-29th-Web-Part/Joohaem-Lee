@@ -1,3 +1,8 @@
+/* body */
+body {
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
+}
 /* header */
 .header {
   height: 64px;
@@ -5,6 +10,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header .header__logo {
+  color: var(--main-color);
 }
 .header .header__nav {
   height: 40px;  
@@ -70,16 +78,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--main-blue-color);
   border: 0;
   border-radius: 50px;
-  color: var(--main-white-color);
+  background-color: var(--second-bg-color);
+  color: var(--forth-color);
   font-size: 16px;
   font-weight: 700;
   transition: background-color 0.3s ease-in-out;
 }
 .header .header__login:hover {
-  background-color: var(--main-gray-color);
+  background-color: var(--third-bg-color);
+  color: var(--fifth-color);
 }
 .header .header__user {
   margin-left: 1em;
@@ -110,7 +119,7 @@
   height: 48px;
   justify-content: center;
   align-items: center;
-  color: var(--main-gray-color);
+  color: var(--second-color);
 }
 .nav .nav__link.active {
   border-bottom: 2px solid black;
@@ -128,20 +137,21 @@
 .nav .nav__sorting {
   width: 84px;
   height: 32px;
-  background-color: var(--main-white-color);
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--main-white-color);
+  color: var(--main-gray-color);
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
   /* for dropdown */
   position: relative;
 }
-.nav .nav__sorting:hover {
-  color: var(--main-gray-color);
+.nav .nav__dropdown-list:hover {
+  color: var(--main-blue-color);
 }
 .nav .nav__show-more {
   cursor: pointer;
@@ -192,7 +202,7 @@
 }
 .section .section__box {
   margin: 10px;
-  background-color: white;
+  background-color: var(--forth-bg-color);
   border-radius: 2px;
   display: flex;
   flex-direction: column;
@@ -393,7 +403,7 @@ body.no-scroll {
 
 /* prefers-color-scheme */
 /* dark mode */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     background: var(--main-gray-color);
     color: var(--main-white-color);
@@ -421,7 +431,6 @@ body.no-scroll {
   .nav .nav__sorting {
     color: var(--main-gray-color);
   }
-  /* .nav 마지막 위치 (cascading) */
   .nav .material-icons {
     background: #F8F9FA;
     border-radius: 50%;
@@ -430,4 +439,4 @@ body.no-scroll {
   .section .section__box {
     background: var(--main-white-color);
   }
-}
+} */

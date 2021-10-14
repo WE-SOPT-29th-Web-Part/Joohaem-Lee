@@ -1,6 +1,6 @@
 "use strict";
 
-// dropdown
+// ----------------------- dropdown -----------------------
 const navSorting = document.querySelector(".nav__sorting");
 const navDropdown = document.querySelector(".nav__dropdown");
 const navActiveSorting = document.querySelector(".nav__sorting--active");
@@ -26,7 +26,7 @@ const initDropdown = () => {
 
 initDropdown();
 
-// modal pop-up
+// ----------------------- modal pop-up -----------------------
 const body = document.body;
 const sections = document.querySelectorAll(".section");
 const articles = document.querySelectorAll(".section__box");
@@ -68,5 +68,38 @@ const initModal = () => {
 
 initModal();
 
-// on & off tags
+// ----------------------- dark mode -----------------------
 
+const checkDark = document.querySelector(".header__input-dark");
+
+const changeChecked = e => {
+  if (e.target.checked) {
+    document.documentElement.setAttribute("color-theme", "dark");
+    localStorage.setItem("color-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("color-theme", "light");
+    localStorage.setItem("color-theme", "light");
+  }
+};
+
+const loadChecked = () => {
+  const currentDarkMode = localStorage.getItem("color-theme");
+  if(currentDarkMode === null) {
+    localStorage.setItem("color-theme", "light");
+  }
+  else if(currentDarkMode === "dark") {
+    document.documentElement.setAttribute("color-theme", "dark");
+    checkDark.checked = true;
+  }
+  else {
+    document.documentElement.setAttribute("color-theme", "light");
+    checkDark.checked = false;
+  }
+};
+
+const initDarkMode = () => {
+  loadChecked();
+  checkDark.addEventListener("click", changeChecked)
+};
+
+initDarkMode();
