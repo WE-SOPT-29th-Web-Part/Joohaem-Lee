@@ -227,7 +227,7 @@ body {
   text-align: center;
   font-size: 2em;
   font-weight: 700;
-  color: var(--main-blue-color);
+  color: var(--second-bg-color);
 }
 .main .main__slide-list {
   width: calc(100% * var(--slide-contents));
