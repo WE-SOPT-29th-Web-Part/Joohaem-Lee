@@ -29,8 +29,8 @@ initDropdown();
 // ----------------------- modal pop-up -----------------------
 const body = document.body;
 const sections = document.querySelectorAll(".section.modal");
-const articles = document.querySelectorAll(".section__box.modal");
 const closeBtns = document.querySelectorAll(".section__close-btn.modal");
+const articles = document.querySelectorAll(".section__box.modal");
 
 const closeModal = (index, e) => {
   // 클릭한 index 검사
@@ -60,10 +60,10 @@ const openModal = (index, e) => {
 }
 
 const initModal = () => {
-  articles.forEach((a, index) => 
-    addEventListener("click", (e) => openModal(index, e)));
-  closeBtns.forEach((c, index) => 
-    addEventListener("click", (e) => closeModal(index, e)));
+  articles.forEach((article, index) => 
+    article.addEventListener("click", (e) => openModal(index, e)));
+  closeBtns.forEach((btn, index) => 
+    btn.addEventListener("click", (e) => closeModal(index, e)));
 };
 
 initModal();

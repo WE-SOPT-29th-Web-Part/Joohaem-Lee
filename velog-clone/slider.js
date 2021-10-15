@@ -31,7 +31,6 @@ const goNext = () => {
   
   slideIndex++;
   slideList.style.transform = `translate3d(-${(slideWidth * (slideIndex))}px, 0px, 0px)`;
-  console.log(slideIndex);
 };
 
 const initSlide = () => {
