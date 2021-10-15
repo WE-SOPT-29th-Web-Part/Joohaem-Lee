@@ -216,6 +216,18 @@ body {
   display: none;
 }
 
+/* main - slider */
+.main .main__slider-wrap {
+  position: relative;
+}
+.main .main__slide-list {
+
+}
+.main .main__slide-content {
+  float: left;
+}
+
+
 /* section content */
 .section .section__main-box {
   height: 190px;
