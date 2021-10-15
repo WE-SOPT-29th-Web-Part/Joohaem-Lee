@@ -28,9 +28,9 @@ initDropdown();
 
 // ----------------------- modal pop-up -----------------------
 const body = document.body;
-const sections = document.querySelectorAll(".section");
-const articles = document.querySelectorAll(".section__box");
-const closeBtns = document.querySelectorAll(".section__close-btn");
+const sections = document.querySelectorAll(".section.modal");
+const articles = document.querySelectorAll(".section__box.modal");
+const closeBtns = document.querySelectorAll(".section__close-btn.modal");
 
 const closeModal = (index, e) => {
   // 클릭한 index 검사
