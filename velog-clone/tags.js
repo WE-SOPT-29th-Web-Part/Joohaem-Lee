@@ -31,7 +31,7 @@ const addTag = (e) => {
   tag.innerText = inputValue;
   tag.addEventListener("click", e => deleteTag(e));
 
-  tagsBox.prepend(tag);
+  tagsBox.insertBefore(tag, inputTag);
   whatTags.push(inputValue);
   inputTag.value = "";
 };
