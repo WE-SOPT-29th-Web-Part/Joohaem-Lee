@@ -217,14 +217,42 @@ body {
 }
 
 /* main - slider */
-.main .main__slider-wrap {
+.main .main__slide-wrap {
   position: relative;
+  width: 100%;
+  overflow-x: hidden;
 }
 .main .main__slide-list {
-
+  width: calc(100% * 5);
+}
+.main .main__slide-list:after {
+  /* float 해제 */
+  content: "";
+  display: block;
+  clear: both;
 }
 .main .main__slide-content {
+  width: calc(100% / 5);
   float: left;
+}
+.main .main__slide-btns {
+  position: absolute;
+  top: 0;
+  bottom: 0;  
+  z-index: 5; 
+  border: none;
+  background: rgba(0, 0, 0, 0.23);
+  color: var(--main-blue-color);
+}
+.main .main__slide-btns:hover {
+  background: rgba(0, 0, 0, 0.73);
+  color: var(--main-white-color);
+}
+.main .main__slide-btn-prev {
+  left: 0;
+}
+.main .main__slide-btn-next {
+  right: 0;
 }
 
 
