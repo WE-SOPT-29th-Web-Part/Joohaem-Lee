@@ -8,21 +8,21 @@ const slideLen = 5;
 let slideIndex = 0;
 
 const goPrev = () => {
+  if (slideIndex < 0) return;
+
   const slideWidth = document.querySelector('.main__slide-content').offsetWidth;
-  if (slideIndex >= 0) {
-    slideList.style.transform = `translate3d(-${(slideWidth * slideIndex)}px, 0px, 0px)`;
-    slideIndex--;
-  }
-  console.log(slideWidth, slideIndex);
+  
+  slideList.style.transform = `translate3d(-${(slideWidth * slideIndex)}px, 0px, 0px)`;
+  slideIndex--;
 };
 
 const goNext = () => {
+  if (slideIndex > slideLen - 2) return;
+
   const slideWidth = document.querySelector('.main__slide-content').offsetWidth;
-  if (slideIndex < slideLen - 1) {
-    slideList.style.transform = `translate3d(-${(slideWidth * (slideIndex + 1))}px, 0px, 0px)`;
-    slideIndex++;
-  }
-  console.log(slideLen, slideIndex);
+  
+  slideList.style.transform = `translate3d(-${(slideWidth * (slideIndex + 1))}px, 0px, 0px)`;
+  slideIndex++;
 };
 
 const initSlide = () => {
