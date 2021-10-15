@@ -224,7 +224,7 @@ body {
 }
 .main .main__slide-list {
   width: calc(100% * 5);
-  transition: all 0.3ms ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 .main .main__slide-list:after {
   /* float 해제 */
