@@ -3,6 +3,7 @@
   --main-white-color: #F8F9FA;
   --main-gray-color: #77746F;
   --main-blue-color: #102027;
+  --slide-contents: 5;
 }
 :root[color-theme='light'] {
   --main-bg-color: #F8F9FA;

@@ -223,7 +223,7 @@ body {
   overflow-x: hidden;
 }
 .main .main__slide-list {
-  width: calc(100% * 5);
+  width: calc(100% * var(--slide-contents));
   transition: all 0.5s ease-in-out;
 }
 .main .main__slide-list:after {
@@ -233,7 +233,7 @@ body {
   clear: both;
 }
 .main .main__slide-content {
-  width: calc(100% / 5);
+  width: calc(100% / var(--slide-contents));
   float: left;
 }
 .main .main__slide-btns {
