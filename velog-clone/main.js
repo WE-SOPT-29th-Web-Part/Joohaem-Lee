@@ -30,7 +30,7 @@ initDropdown();
 const body = document.body;
 const sections = document.querySelectorAll(".section");
 const articles = document.querySelectorAll(".section__box");
-const closeBtns = document.querySelectorAll(".section__close-btn")
+const closeBtns = document.querySelectorAll(".section__close-btn");
 
 const closeModal = (index, e) => {
   // 클릭한 index 검사
