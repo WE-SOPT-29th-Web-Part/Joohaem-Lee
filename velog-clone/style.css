@@ -221,6 +221,13 @@ body {
   position: relative;
   width: 100%;
   overflow-x: hidden;
+  margin: 2em 0;
+}
+.main .main__slide-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--main-blue-color);
 }
 .main .main__slide-list {
   width: calc(100% * var(--slide-contents));
@@ -238,7 +245,7 @@ body {
 }
 .main .main__slide-btns {
   position: absolute;
-  top: 0;
+  top: 2em;
   bottom: 0;  
   z-index: 5; 
   border: none;
