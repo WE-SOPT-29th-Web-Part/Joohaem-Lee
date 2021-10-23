@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.section`
@@ -21,26 +21,29 @@ const Text1 = ({ year, month, date }) => {
   const [inputValue, setInputValue] = useState("");
   const [resultDate, setResultDate] = useState("yyyy년 mm월 dd일");
 
-  const printDate = (value) => {
-    const tempDate = new Date();
-    tempDate.setFullYear(year);
-    tempDate.setMonth(Number(month) - 1);
-    tempDate.setDate(Number(date) + Number(value) - 1);
+  const printDate = useCallback(
+    (value) => {
+      const tempDate = new Date();
+      tempDate.setFullYear(year);
+      tempDate.setMonth(Number(month) - 1);
+      tempDate.setDate(Number(date) + Number(value) - 1);
 
-    const result = `${tempDate.getFullYear()}년 ${
-      tempDate.getMonth() + 1
-    }월 ${tempDate.getDate()}일`;
-    setResultDate(result);
-  };
+      const result = `${tempDate.getFullYear()}년 ${
+        tempDate.getMonth() + 1
+      }월 ${tempDate.getDate()}일`;
+      setResultDate(result);
+    },
+    [year, month, date]
+  );
 
   const handleDday = (e) => {
     setInputValue(e.target.value);
-    printDate(e.target.value);
+    printDate(inputValue);
   };
 
   useEffect(() => {
     printDate(inputValue);
-  }, [year, month, date]);
+  }, [inputValue, printDate]);
 
   return (
     <Wrapper>

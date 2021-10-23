@@ -37,7 +37,6 @@ const DataInput = ({ year, month, date, setYear, setMonth, setDate }) => {
 
   return (
     <Section>
-      <TodayBtn onClick={toToday}>오늘 날짜로</TodayBtn>
       <p>
         <Input
           type="text"
@@ -58,6 +57,7 @@ const DataInput = ({ year, month, date, setYear, setMonth, setDate }) => {
         />
         일을 기준으로
       </p>
+      <TodayBtn onClick={toToday}>오늘 날짜로</TodayBtn>
     </Section>
   );
 };
