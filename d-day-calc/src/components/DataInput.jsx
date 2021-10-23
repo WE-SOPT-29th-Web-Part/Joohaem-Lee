@@ -27,6 +27,7 @@ const Input = styled.input`
 
 const DataInput = ({ year, month, date, setYear, setMonth, setDate }) => {
   const handleChange = (e, setState) => {
+    if (e.target.value <= 0) return;
     setState(e.target.value);
   };
   const toToday = () => {
