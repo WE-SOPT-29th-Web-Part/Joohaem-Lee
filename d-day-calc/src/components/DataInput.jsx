@@ -29,12 +29,15 @@ const DataInput = ({ year, month, date, setYear, setMonth, setDate }) => {
   const handleChange = (e, setState) => {
     setState(e.target.value);
   };
-
-  // 오늘 버튼 누르면 날짜 변경하기
+  const toToday = () => {
+    setYear(new Date().getFullYear());
+    setMonth(new Date().getMonth() + 1);
+    setDate(new Date().getDate());
+  };
 
   return (
     <Section>
-      <TodayBtn>오늘 날짜로</TodayBtn>
+      <TodayBtn onClick={toToday}>오늘 날짜로</TodayBtn>
       <p>
         <Input
           type="text"
