@@ -3,7 +3,7 @@ import styled from "styled-components";
 import axios from "axios";
 
 const Input = styled.input`
-  width: 20rem;
+  width: 100%;
   height: 4rem;
 
   padding: 1rem;

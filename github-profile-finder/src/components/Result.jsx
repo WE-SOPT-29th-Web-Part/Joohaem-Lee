@@ -98,28 +98,39 @@ const Ul = styled.ul`
 `;
 
 const Result = ({ userInfo, setUserInfo }) => {
+  const {
+    avatar_url,
+    name,
+    login,
+    bio,
+    html_url,
+    followers,
+    following,
+    public_repos,
+  } = userInfo;
+
   return userInfo?.avatar_url ? (
     <Card>
       <button onClick={() => setUserInfo({})}>닫기</button>
-      <img src={userInfo.avatar_url} alt="" />
-      <h3>{userInfo.name}</h3>
-      <h4>{userInfo.login}</h4>
-      <p>{userInfo.bio}</p>
-      <a href={userInfo.html_url} target="_blank">
+      <img src={avatar_url} alt="" />
+      <h3>{name}</h3>
+      <h4>{login}</h4>
+      <p>{bio}</p>
+      <a href={html_url} target="_blank">
         Visit Github
       </a>
       <Ul>
         <li>
           <strong>Followers</strong>
-          {userInfo.followers}
+          {followers}
         </li>
         <li>
           <strong>Following</strong>
-          {userInfo.following}
+          {following}
         </li>
         <li>
           <strong>Repos</strong>
-          {userInfo.public_repos}
+          {public_repos}
         </li>
       </Ul>
     </Card>
