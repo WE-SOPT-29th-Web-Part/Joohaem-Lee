@@ -112,11 +112,11 @@ const Result = ({ userInfo, setUserInfo }) => {
   return userInfo?.avatar_url ? (
     <Card>
       <button onClick={() => setUserInfo({})}>닫기</button>
-      <img src={avatar_url} alt="" />
+      <img src={avatar_url} alt="user" />
       <h3>{name}</h3>
       <h4>{login}</h4>
       <p>{bio}</p>
-      <a href={html_url} target="_blank">
+      <a href={html_url} target="_blank" rel="noopener noreferrer">
         Visit Github
       </a>
       <Ul>
