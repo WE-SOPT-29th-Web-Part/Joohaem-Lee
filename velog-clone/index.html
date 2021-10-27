@@ -4,16 +4,36 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="kirbyFVC.png">
+  <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./assets/images/kirbyFVC.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <script defer src="main.js"></script>
+  <script defer src="slider.js"></script>
   <title>Soplog</title>
 </head>
 <body>
   <header class="header">
     <a class="header__logo" href="">LOGO</a>
     <div class="header__nav">
-      <a class="header__search" href=""></a>
-      <button class="header__login">로그인</button>
+      <a class="header__search" href="">
+        <span class="material-icons">
+          search
+        </span>
+      </a>
+      <span class="material-icons">
+        dark_mode
+      </span>
+      <input class="header__input-dark visually_hidden" type="checkbox" id="checkDark">
+      <label class="header__label-dark" for="checkDark"></label>
+      <a class="header__login" href="./tags.html">새 글 작성</a>
+      <a class="header__user">
+        <img class="header__user-img" src="./assets/images/userIMG.jpg" width="32px" alt="user image">
+        <span class="material-icons">
+          arrow_drop_down
+        </span>
+      </a>
     </div>
   </header>
 
@@ -21,67 +41,202 @@
     <nav class="nav">
       <div class="nav__links">
         <a class="nav__link active" href="">
-          <div class="nav__icon nav__icon-trend"></div>
-          <p>트렌딩</p>
+          <span class="material-icons">
+            trending_up
+          </span>
+          <p class="nav__link-text">트렌딩</p>
         </a>
         <a class="nav__link" href="">
-          <div class="nav__icon nav__icon-latest"></div>
-          <p>최신</p>
+          <span class="material-icons">
+            schedule
+          </span>
+          <p class="nav__link-text">최신</p>
         </a>
         <div class="nav__sorting" href="">
-          <p>이번 달</p>
-          <div class="nav__arrow-down"></div>
+          <p class="nav__sorting--active">이번 달</p>
+          <span class="material-icons">
+            arrow_drop_down
+          </span>
+          <ul class="nav__dropdown">
+            <li class="nav__dropdown-list">오늘</li>
+            <li class="nav__dropdown-list active">이번 주</li>
+            <li class="nav__dropdown-list">이번 달</li>
+            <li class="nav__dropdown-list">올해</li>
+          </ul>
         </div>
       </div>
-      <div class="nav__show-more"></div>
+      <span class="material-icons nav__show-more">
+        more_vert
+      </span>
     </nav>
 
     <div class="main__section-wrap">
-      <section class="section">
-        <article class="section__box">
-          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
-          <div class="section__main-box">
-            <a href="">
-              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
-              <p class="section__content">
-                SOPT 1차 세미나
-                <br>- Web
-                <br>-- Agile한 서비스
-                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
-                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
-                
-                <br>- HTML
-                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
-                <br>-- Headingsmap Chrome Extension
-                <br>-- Emmet 단축키
-                  ! / html:5
-                  ul>li*5
-                
-                <br>- CSS
-                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
-                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
-                <br>-- a[target = _blank]
-              </p>
-            </a>
-            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
-          </div>
-          <div class="section__footer-box">
-            <a class="section__user">
-              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
-              <span class="section__user-name">by<b>snupi</b></span>
-            </a>
-            <div class="section__like">
-              <div class="section__like-img"></div>
-              <span class="section__like-cnt">2497</span>
-            </div>
-          </div>
-        </article>
+      <section class="main__slide-wrap">
+        <h1 class="main__slide-title">Best Contents</h1>
+        <button class="main__slide-btns main__slide-btn-prev">«</button>
+        <div class="main__slide-list">
+          <section class="section main__slide-content">
+            <article class="section__box">
+              <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+              <div class="section__main-box">
+                <a class="section__text-link">
+                  <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+                  <p class="section__content">
+                    SOPT 1차 세미나
+                    <br>- Web
+                    <br>-- Agile한 서비스
+                    애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                    <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                    
+                    <br>- HTML
+                    <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                    <br>-- Headingsmap Chrome Extension
+                    <br>-- Emmet 단축키
+                      ! / html:5
+                      ul>li*5
+                    
+                    <br>- CSS
+                    <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                    <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                    <br>-- a[target = _blank]
+                  </p>
+                </a>
+                <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+              </div>
+              <div class="section__footer-box">
+                <a class="section__user">
+                  <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+                  <span class="section__user-name">by<b>snupi</b></span>
+                </a>
+                <div class="section__like">
+                  <div class="section__like-img"></div>
+                  <span class="section__like-cnt">2497</span>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="section main__slide-content">
+            <article class="section__box">
+              <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+              <div class="section__main-box">
+                <a class="section__text-link">
+                  <h4 class="section__title">[SOPT] 두 번째 주</h4>
+                  <p class="section__content">
+                    SOPT 2차 세미나
+                    <br>- JS 
+                    <br>-- 원시타입 / 참조타입
+                    <br>-- Object, Symbol 경우에) b = a 
+                    <br>(by reference : 같은 Object를 참조하여 같은 값을 변경하게 됨
+                    <br>-> const로 선언해도 바뀌게 됨)
+                    <br>-> 얕은 복사? 깊은 복사? 
+                  </p>
+                </a>
+                <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+              </div>
+              <div class="section__footer-box">
+                <a class="section__user">
+                  <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+                  <span class="section__user-name">by<b>snupi</b></span>
+                </a>
+                <div class="section__like">
+                  <div class="section__like-img"></div>
+                  <span class="section__like-cnt">2497</span>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="section main__slide-content">
+            <article class="section__box">
+              <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+              <div class="section__main-box">
+                <a class="section__text-link">
+                  <h4 class="section__title">[SOPT] 세 번째 주</h4>
+                  <p class="section__content">
+                    SOPT 3차 세미나
+                    <br>호다다다다다다다다다다
+                  </p>
+                </a>
+                <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+              </div>
+              <div class="section__footer-box">
+                <a class="section__user">
+                  <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+                  <span class="section__user-name">by<b>snupi</b></span>
+                </a>
+                <div class="section__like">
+                  <div class="section__like-img"></div>
+                  <span class="section__like-cnt">2497</span>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="section main__slide-content">
+            <article class="section__box">
+              <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+              <div class="section__main-box">
+                <a class="section__text-link">
+                  <h4 class="section__title">[SOPT] 네 번째 주</h4>
+                  <p class="section__content">
+                    SOPT 4차 세미나
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                    <br>호다다다다다다다다다다
+                  </p>
+                </a>
+                <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+              </div>
+              <div class="section__footer-box">
+                <a class="section__user">
+                  <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+                  <span class="section__user-name">by<b>snupi</b></span>
+                </a>
+                <div class="section__like">
+                  <div class="section__like-img"></div>
+                  <span class="section__like-cnt">2497</span>
+                </div>
+              </div>
+            </article>
+          </section>
+          <section class="section main__slide-content">
+            <article class="section__box">
+              <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+              <div class="section__main-box">
+                <a class="section__text-link">
+                  <h4 class="section__title">[SOPT] 다섯 번째 주</h4>
+                  <p class="section__content">
+                    SOPT 5차 세미나
+                    <br>푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아푸아
+                  </p>
+                </a>
+                <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+              </div>
+              <div class="section__footer-box">
+                <a class="section__user">
+                  <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+                  <span class="section__user-name">by<b>snupi</b></span>
+                </a>
+                <div class="section__like">
+                  <div class="section__like-img"></div>
+                  <span class="section__like-cnt">2497</span>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+        <button class="main__slide-btns main__slide-btn-next">»</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -116,31 +271,22 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
-              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+            <a class="section__text-link">
+              <h4 class="section__title">[SOPT] 두 번째 주</h4>
               <p class="section__content">
-                SOPT 1차 세미나
-                <br>- Web
-                <br>-- Agile한 서비스
-                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
-                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
-                
-                <br>- HTML
-                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
-                <br>-- Headingsmap Chrome Extension
-                <br>-- Emmet 단축키
-                  ! / html:5
-                  ul>li*5
-                
-                <br>- CSS
-                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
-                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
-                <br>-- a[target = _blank]
+                SOPT 2차 세미나
+                <br>- JS 
+                <br>-- 원시타입 / 참조타입
+                <br>-- Object, Symbol 경우에) b = a 
+                <br>(by reference : 같은 Object를 참조하여 같은 값을 변경하게 됨
+                <br>-> const로 선언해도 바뀌게 됨)
+                <br>-> 얕은 복사? 깊은 복사? 
               </p>
             </a>
             <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
@@ -156,12 +302,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -196,12 +343,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -236,12 +384,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -276,12 +425,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -316,12 +466,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -356,12 +507,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -396,12 +548,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -436,12 +589,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -476,12 +630,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -516,12 +671,13 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
-      <section class="section">
-        <article class="section__box">
+      <section class="section modal">
+        <article class="section__box modal">
           <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
           <div class="section__main-box">
-            <a class="section__text-link" href="">
+            <a class="section__text-link">
               <h4 class="section__title">[SOPT] 첫 번째 주</h4>
               <p class="section__content">
                 SOPT 1차 세미나
@@ -556,6 +712,48 @@
             </div>
           </div>
         </article>
+        <button class="section__close-btn modal">❌</button>
+      </section>
+      <section class="section modal">
+        <article class="section__box modal">
+          <img class="section__img" src="./assets/images/soptIMG.jpg" width="100%" alt="article img">
+          <div class="section__main-box">
+            <a class="section__text-link">
+              <h4 class="section__title">[SOPT] 첫 번째 주</h4>
+              <p class="section__content">
+                SOPT 1차 세미나
+                <br>- Web
+                <br>-- Agile한 서비스
+                애자일은 신속한 작업을 통해 실제 작동 가능한 소프트웨어를 개발하는 소프트웨어 개발 방식입니다. 빠른 변화에 대응해야 하고, 자주 업데이트가 필요한 어플리케이션은 웹으로 개발하는 경우가 많습니다.
+                <br>-- MVP (Minimum Viable Product; 최소 기능 제품) 테스트에 용이
+                
+                <br>- HTML
+                <br>-- meta 태그로 검색엔진 설명, url 이미지 등 설정
+                <br>-- Headingsmap Chrome Extension
+                <br>-- Emmet 단축키
+                  ! / html:5
+                  ul>li*5
+                
+                <br>- CSS
+                <br>-- BEM 방법론 (Block__Element--	Modifier) : “header__nav--active” ; 두 개씩
+                <br>-- div + p : 바로 뒤에 오는 sibling / div ~ p : 뒤에 오는 sibling
+                <br>-- a[target = _blank]
+              </p>
+            </a>
+            <p class="section__info">2021년 10월 1일 · 0개의 댓글</p>
+          </div>
+          <div class="section__footer-box">
+            <a class="section__user">
+              <img class="section__user-img" src="./assets/images/userIMG.jpg" width="24px" alt="user image">
+              <span class="section__user-name">by<b>snupi</b></span>
+            </a>
+            <div class="section__like">
+              <div class="section__like-img"></div>
+              <span class="section__like-cnt">2497</span>
+            </div>
+          </div>
+        </article>
+        <button class="section__close-btn modal">❌</button>
       </section>
 
       
