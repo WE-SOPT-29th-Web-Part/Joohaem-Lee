@@ -98,44 +98,44 @@ const Ul = styled.ul`
 `;
 
 const Result = ({ userInfo, setUserInfo }) => {
-  const {
-    avatar_url,
-    name,
-    login,
-    bio,
-    html_url,
-    followers,
-    following,
-    public_repos,
-  } = userInfo;
+  // const {
+  //   avatar_url,
+  //   name,
+  //   login,
+  //   bio,
+  //   html_url,
+  //   followers,
+  //   following,
+  //   public_repos,
+  // } = userInfo;
 
   return userInfo?.avatar_url ? (
     <Card>
       <button onClick={() => setUserInfo({})}>닫기</button>
-      <img src={avatar_url} alt="user" />
-      <h3>{name}</h3>
-      <h4>{login}</h4>
-      <p>{bio}</p>
-      <a href={html_url} target="_blank" rel="noopener noreferrer">
+      <img src={userInfo.avatar_url} alt="user" />
+      <h3>{userInfo.name}</h3>
+      <h4>{userInfo.login}</h4>
+      <p>{userInfo.bio}</p>
+      <a href={userInfo.html_url} target="_blank" rel="noopener noreferrer">
         Visit Github
       </a>
       <Ul>
         <li>
           <strong>Followers</strong>
-          {followers}
+          {userInfo.followers}
         </li>
         <li>
           <strong>Following</strong>
-          {following}
+          {userInfo.following}
         </li>
         <li>
           <strong>Repos</strong>
-          {public_repos}
+          {userInfo.public_repos}
         </li>
       </Ul>
     </Card>
   ) : (
-    <></>
+    <>asdfsd</>
   );
 };
 
