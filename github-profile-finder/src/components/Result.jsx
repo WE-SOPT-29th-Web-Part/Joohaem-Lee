@@ -7,9 +7,9 @@ const Card = styled.article`
   justify-content: center;
   align-items: center;
   color: white;
-  margin-top: 16px;
+  margin-top: 1rem;
   background-color: rgb(44, 48, 53);
-  width: 390px;
+  width: 25rem;
   border-radius: 20px;
   position: relative;
   animation: slideDown 400ms ease-in 0s 1 normal forwards;
@@ -37,22 +37,22 @@ const Card = styled.article`
     cursor: pointer;
   }
   & > img {
-    width: 200px;
-    height: 200px;
+    width: 13rem;
+    height: 13rem;
     border-radius: 50%;
-    margin-top: 30px;
+    margin-top: 2rem;
   }
   & > h3 {
-    font-size: 24px;
-    margin-top: 24px;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
     font-weight: bold;
   }
   & > h4 {
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
   }
   & > p {
-    padding: 20px 45px;
+    padding: 1.25rem 3rem;
     text-align: center;
   }
   & > a {
@@ -70,11 +70,12 @@ const Card = styled.article`
 
 const Ul = styled.ul`
   display: flex;
+  justify-content: space-between;
   width: 100%;
-  margin-top: 25px;
+  margin-top: 2rem;
   & > li {
-    width: 130px;
-    height: 59px;
+    width: 10rem;
+    height: 3.5rem;
     background-color: rgb(36, 39, 43);
     display: flex;
     flex-direction: column;
@@ -135,7 +136,7 @@ const Result = ({ userInfo, setUserInfo }) => {
       </Ul>
     </Card>
   ) : (
-    <>asdfsd</>
+    <></>
   );
 };
 
