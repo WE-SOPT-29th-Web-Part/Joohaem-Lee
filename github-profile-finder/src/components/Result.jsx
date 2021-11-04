@@ -110,7 +110,7 @@ const Result = ({ userInfo, setUserInfo }) => {
   //   public_repos,
   // } = userInfo;
 
-  return (
+  return userInfo?.avatar_url ? (
     <Card>
       <button onClick={() => setUserInfo({})}>닫기</button>
       <img src={userInfo.avatar_url} alt="user" />
@@ -135,6 +135,8 @@ const Result = ({ userInfo, setUserInfo }) => {
         </li>
       </Ul>
     </Card>
+  ) : (
+    <></>
   );
 };
 
