@@ -10,8 +10,18 @@ const GlobalStyles = createGlobalStyle`
     *{
         box-sizing: border-box;
     }
-    body{
+    #root {
+        width: 100vw;
+        height: 100vh;
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button {
+        outline: 0;
+        cursor: pointer;
+        border: 0;
     }
 `;
 
