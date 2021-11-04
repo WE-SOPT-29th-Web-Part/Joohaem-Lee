@@ -74,15 +74,33 @@ const ListContainer = ({ openToday, openTommorrow }) => {
   const [toDoToday, setToDoToday] = useState([]);
   const [toDoTommorrow, setToDoTommorrow] = useState([]);
 
-  const addToDoToday = (e) => {
+  const addTodayEnter = (e) => {
+    const targetValue = e.target.value;
+    if (e.key !== "Enter") return;
+    if (targetValue === "") return;
+    setToDoToday([...toDoToday, targetValue]);
+    e.target.value = "";
+    e.target.focus();
+  };
+  const addTommorrowEnter = (e) => {
+    const targetValue = e.target.value;
+    if (e.key !== "Enter") return;
+    if (targetValue === "") return;
+    setToDoTommorrow([...toDoTommorrow, targetValue]);
+    e.target.value = "";
+    e.target.focus();
+  };
+  const addTodayBtn = (e) => {
     const targetValue = e.target.previousSibling.value;
     if (targetValue === "") return;
     setToDoToday([...toDoToday, targetValue]);
+    e.target.previousSibling.value = "";
   };
-  const addToDoTommorrow = (e) => {
+  const addTommorrowBtn = (e) => {
     const targetValue = e.target.previousSibling.value;
     if (targetValue === "") return;
     setToDoTommorrow([...toDoTommorrow, targetValue]);
+    e.target.previousSibling.value = "";
   };
 
   return (
@@ -94,8 +112,8 @@ const ListContainer = ({ openToday, openTommorrow }) => {
           <TodayPresenter toDoToday={toDoToday} />
         </Items>
 
-        <Input type="text" name="" id="" />
-        <AddBtn onClick={addToDoToday}>➕</AddBtn>
+        <Input onKeyUp={addTodayEnter} type="text" name="" id="" />
+        <AddBtn onClick={addTodayBtn}>➕</AddBtn>
       </TodayWrapper>
       <TommorrowWrapper className={openTommorrow}>
         <Title>내일 할 일</Title>
@@ -104,8 +122,8 @@ const ListContainer = ({ openToday, openTommorrow }) => {
           <TommorrowPresenter toDoTommorrow={toDoTommorrow} />
         </Items>
 
-        <Input type="text" name="" id="" />
-        <AddBtn onClick={addToDoTommorrow}>➕</AddBtn>
+        <Input onKeyUp={addTommorrowEnter} type="text" name="" id="" />
+        <AddBtn onClick={addTommorrowBtn}>➕</AddBtn>
       </TommorrowWrapper>
     </MainWrapper>
   );
