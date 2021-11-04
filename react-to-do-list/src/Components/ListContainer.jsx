@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import ListPresenter from "./ListPresenter";
+import TodayPresenter from "./TodayPresenter";
+import TommorrowPresenter from "./TommorrowPresenter";
 
 const MainWrapper = styled.main`
   background-color: whitesmoke;
@@ -73,27 +74,38 @@ const ListContainer = ({ openToday, openTommorrow }) => {
   const [toDoToday, setToDoToday] = useState([]);
   const [toDoTommorrow, setToDoTommorrow] = useState([]);
 
+  const addToDoToday = (e) => {
+    const targetValue = e.target.previousSibling.value;
+    if (targetValue === "") return;
+    setToDoToday([...toDoToday, targetValue]);
+  };
+  const addToDoTommorrow = (e) => {
+    const targetValue = e.target.previousSibling.value;
+    if (targetValue === "") return;
+    setToDoTommorrow([...toDoTommorrow, targetValue]);
+  };
+
   return (
     <MainWrapper>
       <TodayWrapper className={openToday} isBoth={openTommorrow === "open"}>
         <Title>오늘 할 일</Title>
 
         <Items>
-          <ListPresenter toDoToday={toDoToday} />
+          <TodayPresenter toDoToday={toDoToday} />
         </Items>
 
         <Input type="text" name="" id="" />
-        <AddBtn>➕</AddBtn>
+        <AddBtn onClick={addToDoToday}>➕</AddBtn>
       </TodayWrapper>
       <TommorrowWrapper className={openTommorrow}>
         <Title>내일 할 일</Title>
 
         <Items>
-          <ListPresenter toDoTommorrow={toDoTommorrow} />
+          <TommorrowPresenter toDoTommorrow={toDoTommorrow} />
         </Items>
 
         <Input type="text" name="" id="" />
-        <AddBtn>➕</AddBtn>
+        <AddBtn onClick={addToDoTommorrow}>➕</AddBtn>
       </TommorrowWrapper>
     </MainWrapper>
   );
