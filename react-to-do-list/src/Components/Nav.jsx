@@ -12,12 +12,24 @@ const NavBtn = styled.button`
   margin: 0 10px;
 `;
 
-const Nav = () => {
+const Nav = ({ setOpenToday, setOpenTommorrow }) => {
+  const clickToday = () => {
+    setOpenToday("open");
+    setOpenTommorrow("");
+  };
+  const clickTommorrow = () => {
+    setOpenToday("");
+    setOpenTommorrow("open");
+  };
+  const clickBoth = () => {
+    setOpenToday("open");
+    setOpenTommorrow("open");
+  };
   return (
     <NavWrapper>
-      <NavBtn>오늘만 보기</NavBtn>
-      <NavBtn>내일만 보기</NavBtn>
-      <NavBtn>함께 보기</NavBtn>
+      <NavBtn onClick={clickToday}>오늘만 보기</NavBtn>
+      <NavBtn onClick={clickTommorrow}>내일만 보기</NavBtn>
+      <NavBtn onClick={clickBoth}>함께 보기</NavBtn>
     </NavWrapper>
   );
 };

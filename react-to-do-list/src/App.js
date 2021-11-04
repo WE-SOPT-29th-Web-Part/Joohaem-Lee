@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 import Header from "./Components/Header";
 import Nav from "./Components/Nav";
 import ListContainer from "./Components/ListContainer";
@@ -14,11 +15,14 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+  const [openToday, setOpenToday] = useState("open");
+  const [openTommorrow, setOpenTommorrow] = useState("open");
+
   return (
     <Wrapper className="App">
       <Header />
-      <Nav />
-      <ListContainer />
+      <Nav setOpenToday={setOpenToday} setOpenTommorrow={setOpenTommorrow} />
+      <ListContainer openToday={openToday} openTommorrow={openTommorrow} />
       <Footer />
       <GlobalStyles />
     </Wrapper>

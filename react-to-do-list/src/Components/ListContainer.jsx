@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import ListPresenter from "./ListPresenter";
 
 const MainWrapper = styled.main`
   background-color: whitesmoke;
@@ -68,19 +69,23 @@ const AddBtn = styled.button`
   width: 100%;
 `;
 
-const ListContainer = () => {
+const ListContainer = ({ openToday, openTommorrow }) => {
+  const [toDo, setToDo] = useState([]);
+
   return (
     <MainWrapper>
-      <TodayWrapper className="open">
-        <Title className="todos__header">오늘 할 일</Title>
+      <TodayWrapper className={openToday}>
+        <Title>오늘 할 일</Title>
 
-        <Items>{/* JS 추가 */}sadas</Items>
+        <Items>
+          <ListPresenter toDo={toDo} />
+        </Items>
 
         <Input type="text" name="" id="" />
         <AddBtn>➕</AddBtn>
       </TodayWrapper>
-      <TommorrowWrapper className="open">
-        <Title className="todos__header">내일 할 일</Title>
+      <TommorrowWrapper className={openTommorrow}>
+        <Title>내일 할 일</Title>
 
         <Items>{/* JS 추가 */}</Items>
 
