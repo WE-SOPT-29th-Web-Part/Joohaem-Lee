@@ -20,10 +20,29 @@ const SearchBar = ({ setUserInfo }) => {
 
   const getApi = async (e) => {
     e.preventDefault();
-    const { data } = await axios.get(`https://api.github.com/users/${user}`);
+    setUserInfo((currentUserInfo) => ({
+      ...currentUserInfo,
+      status: "pending",
+    }));
 
-    setUserInfo(data);
-    setUser("");
+    try {
+      const { data } = await axios.get(`https://api.github.com/users/${user}`);
+
+      console.log(data);
+      setUserInfo((currentUserInfo) => ({
+        ...currentUserInfo,
+        data,
+        status: "resolved",
+      }));
+      setUser("");
+    } catch (error) {
+      setUserInfo((currentUserInfo) => ({
+        ...currentUserInfo,
+        data: null,
+        status: "rejected",
+      }));
+      console.log(error);
+    }
   };
 
   return (
