@@ -13,7 +13,6 @@ const TodayWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-right: 1px solid black;
   /* display로 구현할 경우, width 조정 없이 바로 사라져 애니메이션 적용이 안 됨 */
   /* display: none; */
   width: 0%;
@@ -23,6 +22,7 @@ const TodayWrapper = styled.section`
     /* display: flex; */
     width: 100%;
     visibility: visible;
+    border-right: ${(props) => (props.isBoth ? "1px solid black" : "none")};
   }
 `;
 
@@ -70,15 +70,16 @@ const AddBtn = styled.button`
 `;
 
 const ListContainer = ({ openToday, openTommorrow }) => {
-  const [toDo, setToDo] = useState([]);
+  const [toDoToday, setToDoToday] = useState([]);
+  const [toDoTommorrow, setToDoTommorrow] = useState([]);
 
   return (
     <MainWrapper>
-      <TodayWrapper className={openToday}>
+      <TodayWrapper className={openToday} isBoth={openTommorrow === "open"}>
         <Title>오늘 할 일</Title>
 
         <Items>
-          <ListPresenter toDo={toDo} />
+          <ListPresenter toDoToday={toDoToday} />
         </Items>
 
         <Input type="text" name="" id="" />
@@ -87,7 +88,9 @@ const ListContainer = ({ openToday, openTommorrow }) => {
       <TommorrowWrapper className={openTommorrow}>
         <Title>내일 할 일</Title>
 
-        <Items>{/* JS 추가 */}</Items>
+        <Items>
+          <ListPresenter toDoTommorrow={toDoTommorrow} />
+        </Items>
 
         <Input type="text" name="" id="" />
         <AddBtn>➕</AddBtn>
