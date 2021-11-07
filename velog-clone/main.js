@@ -12,9 +12,7 @@ const openDropdown = () => {
 const changeActive = (e) => {
   navActiveSorting.innerText = e.target.innerText;
 
-  Array.from(navDropdown.children)
-    .filter((list) => list.classList.contains("active"))[0]
-    .classList.remove("active");
+navDropdown.children.forEach(item => item.classList.remove("active"));
 
   e.target.classList.add("active");
 }
