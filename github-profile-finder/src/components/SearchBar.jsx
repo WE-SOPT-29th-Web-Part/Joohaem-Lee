@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -17,6 +17,16 @@ const Input = styled.input`
 
 const SearchBar = ({ setUserInfo }) => {
   const [user, setUser] = useState("");
+  const [history, setHistory] = useState([]);
+
+  const getHistory = (data) => {
+    if (history.length >= 3) return;
+    setHistory((currentHistory) => [...currentHistory, user]);
+  };
+
+  useEffect(() => {
+    console.log(`history`, history);
+  }, [history]);
 
   const getApi = async (e) => {
     e.preventDefault();
@@ -28,7 +38,7 @@ const SearchBar = ({ setUserInfo }) => {
     try {
       const { data } = await axios.get(`https://api.github.com/users/${user}`);
 
-      console.log(data);
+      getHistory(user);
       setUserInfo((currentUserInfo) => ({
         ...currentUserInfo,
         data,
@@ -41,7 +51,7 @@ const SearchBar = ({ setUserInfo }) => {
         data: null,
         status: "rejected",
       }));
-      console.log(error);
+      console.log(`error : `, error);
     }
   };
 
