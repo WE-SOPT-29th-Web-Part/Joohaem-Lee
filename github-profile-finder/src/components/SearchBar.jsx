@@ -21,6 +21,7 @@ const SearchBar = ({ setUserInfo }) => {
 
   const getHistory = (data) => {
     if (history.length >= 3) return;
+    if (history.includes(data)) return;
     setHistory((currentHistory) => [...currentHistory, user]);
   };
 
