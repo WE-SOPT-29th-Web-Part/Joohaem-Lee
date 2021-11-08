@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import History from "./History";
 
 const Input = styled.input`
   width: 100%;
@@ -17,7 +18,10 @@ const Input = styled.input`
 
 const SearchBar = ({ setUserInfo }) => {
   const [user, setUser] = useState("");
-  const [history, setHistory] = useState([]);
+  const [history, setHistory] = useState(
+    // load localStorage
+    localStorage.getItem("history") ? localStorage.getItem("history") : []
+  );
 
   const getHistory = (data) => {
     if (history.length >= 3) return;
@@ -25,8 +29,10 @@ const SearchBar = ({ setUserInfo }) => {
     setHistory((currentHistory) => [...currentHistory, user]);
   };
 
+  // of history
   useEffect(() => {
     console.log(`history`, history);
+    localStorage.setItem("history", history);
   }, [history]);
 
   const getApi = async (e) => {
@@ -64,6 +70,7 @@ const SearchBar = ({ setUserInfo }) => {
         type="text"
         placeholder="Github 프로필을 검색해보세요"
       />
+      <History history={history} setHistory={setHistory} />
     </form>
   );
 };

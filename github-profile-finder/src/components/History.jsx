@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-function History() {
+function History({ history }) {
   return <div></div>;
 }
 
