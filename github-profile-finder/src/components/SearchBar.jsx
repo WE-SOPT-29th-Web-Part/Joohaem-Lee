@@ -3,6 +3,10 @@ import styled from "styled-components";
 import axios from "axios";
 import History from "./History";
 
+const Form = styled.form`
+  position: relative;
+`;
+
 const Input = styled.input`
   width: 100%;
   height: 4rem;
@@ -18,22 +22,20 @@ const Input = styled.input`
 
 const SearchBar = ({ setUserInfo }) => {
   const [user, setUser] = useState("");
-  const [history, setHistory] = useState(
-    // load localStorage
-    localStorage.getItem("history") ? localStorage.getItem("history") : []
-  );
+  const [history, setHistory] = useState([]);
 
   const getHistory = (data) => {
     if (history.length >= 3) return;
     if (history.includes(data)) return;
     setHistory((currentHistory) => [...currentHistory, user]);
+    localStorage.setItem("history", JSON.stringify(history));
   };
 
-  // of history
+  // when mouting
   useEffect(() => {
-    console.log(`history`, history);
-    localStorage.setItem("history", history);
-  }, [history]);
+    localStorage.getItem("history") &&
+      setHistory(JSON.parse(localStorage.getItem("history")));
+  }, []);
 
   const getApi = async (e) => {
     e.preventDefault();
@@ -63,7 +65,7 @@ const SearchBar = ({ setUserInfo }) => {
   };
 
   return (
-    <form onSubmit={getApi}>
+    <Form onSubmit={getApi}>
       <Input
         value={user}
         onChange={(e) => setUser(e.target.value)}
@@ -71,7 +73,7 @@ const SearchBar = ({ setUserInfo }) => {
         placeholder="Github 프로필을 검색해보세요"
       />
       <History history={history} setHistory={setHistory} />
-    </form>
+    </Form>
   );
 };
 
