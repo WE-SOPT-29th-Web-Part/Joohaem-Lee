@@ -24,11 +24,13 @@ const SearchBar = ({ setUserInfo }) => {
   const [user, setUser] = useState("");
   const [history, setHistory] = useState([]);
 
-  const getHistory = (data) => {
+  const getHistory = (userName) => {
     if (history.length >= 3) return;
-    if (history.includes(data)) return;
-    setHistory((currentHistory) => [...currentHistory, user]);
-    localStorage.setItem("history", JSON.stringify(history));
+    if (history.includes(userName)) return;
+    setHistory((currentHistory) => {
+      console.log(`currentHistory - `, currentHistory);
+      return [...currentHistory, userName];
+    });
   };
 
   // when mouting
@@ -36,6 +38,16 @@ const SearchBar = ({ setUserInfo }) => {
     localStorage.getItem("history") &&
       setHistory(JSON.parse(localStorage.getItem("history")));
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("history", JSON.stringify(history));
+    // console.log(
+    //   `history - `,
+    //   history,
+    //   `localstorage - `,
+    //   localStorage.getItem("history")
+    // );
+  }, [history]);
 
   const getApi = async (e) => {
     e.preventDefault();
