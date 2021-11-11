@@ -9,8 +9,13 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/write" component={Write} />
-          {/* <Route exact path="/" component={Home} /> */}
+          <Route component={() => <p>Page Not Found</p>} />
         </Switch>
+        {/* <Routes>
+          <Route path="/" element={Home} />
+          <Route path="/write" element={Write} />
+          <Route element={() => <p>Page Not Found</p>}
+        </Routes> */}
       </BrowserRouter>
     </>
   );

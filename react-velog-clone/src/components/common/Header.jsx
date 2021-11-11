@@ -11,9 +11,7 @@ const Header = () => {
     <div>
       <StyledLeft>sopt.log</StyledLeft>
       <StyledRight>
-        <Link to="/write">
-          <button>새 글 작성</button>
-        </Link>
+        <Link to="/write">글 작성</Link>
       </StyledRight>
     </div>
   );
