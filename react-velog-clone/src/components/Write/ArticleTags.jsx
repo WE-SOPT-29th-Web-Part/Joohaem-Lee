@@ -3,12 +3,14 @@ import React from "react";
 const ArticleTags = ({ tags, articleData, setArticleData }) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
+      const newTag = e.target.value;
+      if (articleData.tags.includes(newTag)) return;
       // setArticleData((articleData) => ({
       //   ...articleData,
-      //   tags: [...articleData.tags, e.target.value],
+      //   tags: [...articleData.tags, newTag],
       // }));
       const tempData = { ...articleData };
-      tempData.tags = [...tempData.tags, e.target.value];
+      tempData.tags = [...tempData.tags, newTag];
       setArticleData(tempData);
       e.target.value = "";
     }
