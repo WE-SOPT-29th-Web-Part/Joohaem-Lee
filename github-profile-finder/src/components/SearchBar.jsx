@@ -20,7 +20,7 @@ const Input = styled.input`
   color: rgb(220, 230, 231);
 `;
 
-const SearchBar = ({ setUserInfo }) => {
+const SearchBar = ({ userInfo, setUserInfo }) => {
   const [user, setUser] = useState("");
   const [history, setHistory] = useState([]);
 
@@ -39,15 +39,12 @@ const SearchBar = ({ setUserInfo }) => {
       setHistory(JSON.parse(localStorage.getItem("history")));
   }, []);
 
+  // of history
   useEffect(() => {
     localStorage.setItem("history", JSON.stringify(history));
-    // console.log(
-    //   `history - `,
-    //   history,
-    //   `localstorage - `,
-    //   localStorage.getItem("history")
-    // );
   }, [history]);
+
+  // ------------------------------------------------------------------------
 
   const getApi = async (e) => {
     e.preventDefault();
@@ -76,6 +73,10 @@ const SearchBar = ({ setUserInfo }) => {
     }
   };
 
+  // useEffect(() => {
+  //   getApi();
+  // }, [userInfo]);
+
   return (
     <Form onSubmit={getApi}>
       <Input
@@ -84,7 +85,11 @@ const SearchBar = ({ setUserInfo }) => {
         type="text"
         placeholder="Github 프로필을 검색해보세요"
       />
-      <History history={history} setHistory={setHistory} />
+      <History
+        history={history}
+        setHistory={setHistory}
+        setUserInfo={setUserInfo}
+      />
     </Form>
   );
 };
