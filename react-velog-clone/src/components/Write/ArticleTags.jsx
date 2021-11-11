@@ -16,8 +16,8 @@ const ArticleTags = ({ tags, articleData, setArticleData }) => {
 
   return (
     <section>
-      {tags.map((tag) => (
-        <span key={tag}>{tag}</span>
+      {tags.map((tag, idx) => (
+        <span key={`tag-${idx}`}>{tag}</span>
       ))}
       <input type="text" onKeyPress={handleKeyPress} />
     </section>

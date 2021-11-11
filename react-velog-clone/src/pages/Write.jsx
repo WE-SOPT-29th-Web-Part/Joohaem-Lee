@@ -17,7 +17,7 @@ const Write = () => {
     data: "", // 오늘 날짜 찍기
   });
 
-  const createArticle = async () => {
+  const handlePost = async () => {
     const { data } = await client.get("/article");
     const id = data.length + 1;
     const now = new Date();
@@ -31,10 +31,6 @@ const Write = () => {
       date,
       summary: "요약 정해주기!",
     });
-  };
-
-  const handlePost = async () => {
-    await createArticle();
   };
 
   return (
