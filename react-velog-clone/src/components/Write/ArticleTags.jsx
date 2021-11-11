@@ -5,6 +5,7 @@ const ArticleTags = ({ tags, articleData, setArticleData }) => {
     if (e.key === "Enter") {
       const newTag = e.target.value;
       if (articleData.tags.includes(newTag)) return;
+      if (newTag === "") return;
       // setArticleData((articleData) => ({
       //   ...articleData,
       //   tags: [...articleData.tags, newTag],
