@@ -1,12 +1,29 @@
 import React from "react";
 import styled from "styled-components";
 import userLogo from "../../assets/images/snupi.jpg";
+import { ReactComponent as GithubIcon } from "../../assets/icons/github.svg";
+import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
+import { ReactComponent as MailIcon } from "../../assets/icons/mail.svg";
 
 const Profile = () => {
   return (
     <Section>
       <UserIMG src={userLogo} width="128px" alt="user" />
       <Name>SNUPI</Name>
+      <LinkWrapper>
+        <UserLink href="https://github.com/joohaem" target="blank">
+          <GithubIcon />
+        </UserLink>
+        <UserLink
+          href="https://xenodochial-wright-ed3962.netlify.app/#/"
+          target="blank"
+        >
+          <HomeIcon />
+        </UserLink>
+        <UserLink href="/">
+          <MailIcon />
+        </UserLink>
+      </LinkWrapper>
     </Section>
   );
 };
@@ -30,7 +47,24 @@ const UserIMG = styled.img`
 const Name = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
-  margin-left: 1.5rem;
+  margin: 0 1.5rem;
+`;
+
+const LinkWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+`;
+
+const UserLink = styled.a`
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: var(--main-gray-color);
+  }
+  &:hover svg {
+    fill: var(--main-black-color);
+  }
 `;
 
 export default Profile;
