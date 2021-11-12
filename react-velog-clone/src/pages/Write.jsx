@@ -47,6 +47,7 @@ const Write = () => {
         articleData={articleData}
         setArticleData={setArticleData}
       />
+      <StyledHr noshade />
       <ArticleBody setArticleData={setArticleData} />
       <ArticleFooter setArticleData={setArticleData} />
       <button onClick={handlePost}>POST!</button>

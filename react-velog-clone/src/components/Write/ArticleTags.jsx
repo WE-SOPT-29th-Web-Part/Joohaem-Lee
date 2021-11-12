@@ -32,7 +32,11 @@ const ArticleTags = ({ tags, articleData, setArticleData }) => {
           {tag}
         </Tag>
       ))}
-      <Input type="text" onKeyPress={handleKeyPress} />
+      <Input
+        type="text"
+        onKeyPress={handleKeyPress}
+        placeholder="태그를 입력하세요"
+      />
     </Tags>
   );
 };
