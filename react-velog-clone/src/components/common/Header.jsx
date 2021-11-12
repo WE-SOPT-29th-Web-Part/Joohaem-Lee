@@ -50,9 +50,11 @@ const SearchWrapper = styled.div`
   height: 40px;
   margin-right: 12px;
   border-radius: 50%;
+  transition: all 0.3s ease-in-out;
   &:hover {
-    background-color: gray;
+    background-color: var(--main-gray-color);
     cursor: pointer;
+    color: var(--main-white-color);
   }
 `;
 
