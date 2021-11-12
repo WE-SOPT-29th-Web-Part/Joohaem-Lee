@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 import ArticleTitle from "../components/Write/ArticleTitle";
 import ArticleTags from "../components/Write/ArticleTags";
 import ArticleBody from "../components/Write/ArticleBody";
@@ -38,8 +39,9 @@ const Write = () => {
   };
 
   return (
-    <main>
+    <StyledMain>
       <ArticleTitle setArticleData={setArticleData} />
+      <StyledHr noshade />
       <ArticleTags
         tags={articleData.tags}
         articleData={articleData}
@@ -48,8 +50,19 @@ const Write = () => {
       <ArticleBody setArticleData={setArticleData} />
       <ArticleFooter setArticleData={setArticleData} />
       <button onClick={handlePost}>POST!</button>
-    </main>
+    </StyledMain>
   );
 };
+
+const StyledMain = styled.main`
+  padding: 2em;
+`;
+
+const StyledHr = styled.hr`
+  margin: 24px 0 16px 0;
+  width: 64px;
+  height: 6px;
+  background-color: var(--main-gray-color);
+`;
 
 export default Write;
