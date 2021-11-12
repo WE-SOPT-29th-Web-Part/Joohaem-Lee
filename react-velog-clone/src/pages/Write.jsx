@@ -4,6 +4,7 @@ import ArticleTitle from "../components/Write/ArticleTitle";
 import ArticleTags from "../components/Write/ArticleTags";
 import ArticleBody from "../components/Write/ArticleBody";
 import ArticleFooter from "../components/Write/ArticleFooter";
+import PublishScreen from "../components/Write/PublishScreen";
 
 const Write = () => {
   const [articleData, setArticleData] = useState({
@@ -16,6 +17,7 @@ const Write = () => {
     thumbnail: "", // 미완
     date: "",
   });
+  const [isPublished, setIsPublished] = useState(false);
 
   return (
     <StyledMain>
@@ -28,7 +30,13 @@ const Write = () => {
       />
       <StyledHr noshade />
       <ArticleBody setArticleData={setArticleData} />
-      <ArticleFooter articleData={articleData} />
+      <ArticleFooter setIsPublished={setIsPublished} />
+      {isPublished && (
+        <PublishScreen
+          articleData={articleData}
+          setIsPublished={setIsPublished}
+        />
+      )}
     </StyledMain>
   );
 };
