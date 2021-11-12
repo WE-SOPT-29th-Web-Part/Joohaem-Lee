@@ -9,21 +9,23 @@ const Profile = () => {
   return (
     <Section>
       <UserIMG src={userLogo} width="128px" alt="user" />
-      <Name>SNUPI</Name>
-      <LinkWrapper>
-        <UserLink href="https://github.com/joohaem" target="blank">
-          <GithubIcon />
-        </UserLink>
-        <UserLink
-          href="https://xenodochial-wright-ed3962.netlify.app/#/"
-          target="blank"
-        >
-          <HomeIcon />
-        </UserLink>
-        <UserLink href="/">
-          <MailIcon />
-        </UserLink>
-      </LinkWrapper>
+      <div>
+        <Name>SNUPI</Name>
+        <LinkWrapper>
+          <UserLink href="https://github.com/joohaem" target="blank">
+            <GithubIcon />
+          </UserLink>
+          <UserLink
+            href="https://xenodochial-wright-ed3962.netlify.app/#/"
+            target="blank"
+          >
+            <HomeIcon />
+          </UserLink>
+          <UserLink href="/">
+            <MailIcon />
+          </UserLink>
+        </LinkWrapper>
+      </div>
     </Section>
   );
 };
@@ -52,14 +54,15 @@ const Name = styled.p`
 
 const LinkWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: stretch;
 `;
 
 const UserLink = styled.a`
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    margin: 0.125rem;
+    width: 1.25rem;
+    height: 1.25rem;
     fill: var(--main-gray-color);
   }
   &:hover svg {
