@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 const ArticleBody = ({ setArticleData }) => {
+  const MAX_NUM = 150;
+
   const handleChange = (e) => {
-    if (e.target.value.length > 10) {
-      e.target.value = e.target.value.substring(0, 10);
+    if (e.target.value.length > MAX_NUM) {
+      e.target.value = e.target.value.substring(0, MAX_NUM);
       e.target.style.color = "red";
       return;
     }
@@ -25,9 +27,11 @@ const ArticleBody = ({ setArticleData }) => {
 const Textarea = styled.textarea`
   all: unset;
   width: 100%;
+  height: 10rem;
   font-size: 1rem;
   line-height: 1.5;
   color: rgb(33, 37, 41);
+  overflow-wrap: break-word;
   &::placeholder {
     font-style: italic;
   }
