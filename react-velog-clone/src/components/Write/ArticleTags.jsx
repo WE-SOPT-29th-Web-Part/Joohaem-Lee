@@ -10,6 +10,7 @@ const ArticleTags = ({ tags, articleData, setArticleData }) => {
       //   ...articleData,
       //   tags: [...articleData.tags, newTag],
       // }));
+      // 비동기 -> 불변성 유지 필요
       const tempData = { ...articleData };
       tempData.tags = [...tempData.tags, newTag];
       setArticleData(tempData);
