@@ -1,33 +1,49 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { Outlet } from "react-router";
 
-const Nav = styled.nav`
+const Items = styled.ul`
   display: flex;
   justify-content: center;
-  & > a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 8rem;
-    height: 3rem;
-    font-size: 1.125rem;
-    color: var(--main-gray-color);
-    text-decoration: none;
-  }
 `;
-const StyledLLink = styled(Link)``;
-const StyledRLink = styled(Link)``;
+
+const Item = styled.li`
+  width: 8rem;
+  height: 3rem;
+  font-size: 1.125rem;
+  color: var(--main-gray-color);
+
+  font-weight: 700;
+  color: ${({ selected }) =>
+    selected ? "var(--main-green-color)" : "var(--main-gray-color)"};
+  border-bottom: 3px solid
+    ${({ selected }) => (selected ? "var(--main-green-color)" : "none")};
+`;
+
+const StyledLink = styled(Link)`
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const HomeNav = () => {
+  const { pathname } = useLocation();
   return (
     <>
-      <Nav>
-        <StyledLLink to="">글</StyledLLink>
-        <StyledRLink to="/series">시리즈</StyledRLink>
-      </Nav>
+      <nav>
+        <Items>
+          <Item selected={pathname === "/"}>
+            <StyledLink to="">글</StyledLink>
+          </Item>
+          <Item selected={pathname === "/series"}>
+            <StyledLink to="/series">시리즈</StyledLink>
+          </Item>
+        </Items>
+      </nav>
       <Outlet />
     </>
   );

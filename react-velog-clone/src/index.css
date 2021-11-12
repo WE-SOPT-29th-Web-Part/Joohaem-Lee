@@ -2,6 +2,7 @@
   --main-white-color: #f8f9fa;
   --main-gray-color: #77746f;
   --main-blue-color: #102027;
+  --main-green-color: #67e5a2;
 }
 
 body {
@@ -16,4 +17,11 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+li {
+  list-style: none;
 }
