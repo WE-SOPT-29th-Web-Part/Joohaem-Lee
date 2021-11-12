@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/*" element={<Home />}>
             <Route path="" element={<ArticlesContainer />} />
-            <Route path="series" element={<Write />} />
+            <Route path="series" element={<p>This is Series</p>} />
           </Route>
           <Route path="/write" element={<Write />} />
           <Route path="/*" element={<p>Page Not Found</p>} />

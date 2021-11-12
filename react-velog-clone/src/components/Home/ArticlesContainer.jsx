@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import { client } from "../../libs/api";
 import ArticleCard from "./ArticlesCard";
 
@@ -16,12 +17,17 @@ const ArticlesContainer = () => {
   }, []);
 
   return (
-    <section>
+    <Section>
       {articleData.map((article) => (
         <ArticleCard key={`article-${article.id}`} article={article} />
       ))}
-    </section>
+    </Section>
   );
 };
+
+const Section = styled.section`
+  width: 60%;
+  margin: 0 auto;
+`;
 
 export default ArticlesContainer;
