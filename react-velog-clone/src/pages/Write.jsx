@@ -11,7 +11,7 @@ const Write = () => {
     id: "",
     title: "",
     body: "",
-    summary: "", // 미완
+    summary: "",
     series: "", // 미완
     tags: [],
     thumbnail: "", // 미완
