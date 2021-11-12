@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Write from "./pages/Write";
+import ArticlesContainer from "./components/Home/ArticlesContainer";
 
 function App() {
   return (
@@ -12,9 +13,12 @@ function App() {
           <Route component={() => <p>Page Not Found</p>} />
         </Switch> */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/*" element={<Home />}>
+            <Route path="" element={<ArticlesContainer />} />
+            <Route path="series" element={<Write />} />
+          </Route>
           <Route path="/write" element={<Write />} />
-          <Route path="*" element={<p>Page Not Found</p>} />
+          <Route path="/*" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </>
