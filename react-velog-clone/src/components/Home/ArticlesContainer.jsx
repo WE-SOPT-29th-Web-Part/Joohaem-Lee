@@ -28,6 +28,8 @@ const ArticlesContainer = () => {
 const Section = styled.section`
   width: 60%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
 `;
 
 export default ArticlesContainer;

@@ -34,6 +34,7 @@ const Write = () => {
       {isPublished && (
         <PublishScreen
           articleData={articleData}
+          setArticleData={setArticleData}
           setIsPublished={setIsPublished}
         />
       )}
