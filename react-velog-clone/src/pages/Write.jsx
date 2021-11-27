@@ -19,9 +19,27 @@ const Write = () => {
   });
   const [isPublished, setIsPublished] = useState(false);
 
+  const handleDataChange = (key, value) => {
+    // key: title, body, summary, thumnail , ...
+    // value: e.target.value
+    const tempArticleData = { ...articleData };
+    // 객체 복사 -> 상태는 불변성을 유지해야함
+    tempArticleData[key] = value;
+    // key가 변수처럼
+    setArticleData(tempArticleData);
+  };
+
+  // key 에서 handle press
+  const handleArrDataChange = (key, value) => {
+    const tempArticleData = { ...articleData };
+    tempArticleData[key] = [...tempArticleData[key], value];
+    setArticleData(tempArticleData);
+  };
+  // key 에서 handle click
+
   return (
     <StyledMain>
-      <ArticleTitle setArticleData={setArticleData} />
+      <ArticleTitle onDataChange={handleDataChange} />
       <StyledHr noshade />
       <ArticleTags
         tags={articleData.tags}
@@ -29,12 +47,12 @@ const Write = () => {
         setArticleData={setArticleData}
       />
       <StyledHr noshade />
-      <ArticleBody setArticleData={setArticleData} />
+      <ArticleBody onDataChange={handleDataChange} />
       <ArticleFooter setIsPublished={setIsPublished} />
       {isPublished && (
         <PublishScreen
           articleData={articleData}
-          setArticleData={setArticleData}
+          onDataChange={handleDataChange}
           setIsPublished={setIsPublished}
         />
       )}

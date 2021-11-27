@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { client } from "../../libs/api";
 import { useNavigate } from "react-router";
 
-const PublishScreen = ({ articleData, setArticleData, setIsPublished }) => {
+const PublishScreen = ({ articleData, onDataChange, setIsPublished }) => {
   const MAX_NUM = 150;
   const [textCnt, setTextCnt] = useState(0);
   const navigate = useNavigate();
@@ -22,10 +22,7 @@ const PublishScreen = ({ articleData, setArticleData, setIsPublished }) => {
 
     setTextCnt(target.value.length);
     target.style.color = "inherit";
-    setArticleData((articleData) => ({
-      ...articleData,
-      summary: target.value,
-    }));
+    onDataChange("summary", e.target.value);
   };
 
   const handlePost = async () => {
