@@ -29,13 +29,17 @@ const Write = () => {
     setArticleData(tempArticleData);
   };
 
-  // key 에서 handle press
-  const handleArrDataChange = (key, value) => {
+  const handleTagAdd = (key, value) => {
     const tempArticleData = { ...articleData };
     tempArticleData[key] = [...tempArticleData[key], value];
     setArticleData(tempArticleData);
   };
-  // key 에서 handle click
+
+  const handleTagDelete = (value) => {
+    const tempData = { ...articleData };
+    tempData.tags = tempData.tags.filter((tag) => tag !== value);
+    setArticleData(tempData);
+  };
 
   return (
     <StyledMain>
@@ -44,7 +48,8 @@ const Write = () => {
       <ArticleTags
         tags={articleData.tags}
         articleData={articleData}
-        setArticleData={setArticleData}
+        onAddTag={handleTagAdd}
+        onDeleteTag={handleTagDelete}
       />
       <StyledHr noshade />
       <ArticleBody onDataChange={handleDataChange} />
