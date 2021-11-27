@@ -26,14 +26,9 @@ const PublishScreen = ({ articleData, onDataChange, setIsPublished }) => {
   };
 
   const handlePost = async () => {
-    // 수정 중일 때는 update해야 함
-    if (articleData) {
-      await client.patch(`article/${articleData.id}}`, articleData);
-    } else {
-      await client.post("/article", {
-        ...articleData,
-      });
-    }
+    await client.post("/article", {
+      ...articleData,
+    });
 
     navigate("/");
   };
@@ -45,9 +40,11 @@ const PublishScreen = ({ articleData, onDataChange, setIsPublished }) => {
 
     formData.append("file", imageFile);
     const imageResponse = await imageClient.post("", formData);
+    console.log(`imageResopnse`, imageResponse);
 
     // request body / response body
     const imageUrl = imageResponse.data.url;
+    console.log(`imageUrl`, imageUrl);
     onDataChange("thumbnail", imageUrl);
   };
 

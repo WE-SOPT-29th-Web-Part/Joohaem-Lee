@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ArticleTitle from "../components/Write/ArticleTitle";
 import ArticleTags from "../components/Write/ArticleTags";
 import ArticleBody from "../components/Write/ArticleBody";
@@ -8,6 +8,7 @@ import ArticleFooter from "../components/Write/ArticleFooter";
 import PublishScreen from "../components/Write/PublishScreen";
 
 const Write = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const article = location.state;
 
@@ -44,6 +45,11 @@ const Write = () => {
     const tempData = { ...articleData };
     tempData.tags = tempData.tags.filter((tag) => tag !== value);
     setArticleData(tempData);
+  };
+
+  const createArticle = async () => {
+    if (article) {
+    }
   };
 
   return (
