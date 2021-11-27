@@ -8,14 +8,12 @@ import PublishScreen from "../components/Write/PublishScreen";
 
 const Write = () => {
   const [articleData, setArticleData] = useState({
-    id: "",
     title: "",
     body: "",
     summary: "",
     series: "", // 미완
     tags: [],
-    thumbnail: "", // 미완
-    date: "",
+    thumbnail: "",
   });
   const [isPublished, setIsPublished] = useState(false);
 
