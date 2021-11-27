@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
-const ArticleTitle = ({ onDataChange }) => {
+const ArticleTitle = ({ title, onDataChange }) => {
   return (
     <Input
+      value={title}
       placeholder="제목을 입력하세요"
       onChange={(e) => onDataChange("title", e.target.value)}
     ></Input>

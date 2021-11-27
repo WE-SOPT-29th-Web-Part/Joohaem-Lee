@@ -26,18 +26,14 @@ const PublishScreen = ({ articleData, onDataChange, setIsPublished }) => {
   };
 
   const handlePost = async () => {
-    // const { data } = await client.get("/article");
-    // const id = data.length + 1;
-    // id 하나씩 증가 (1, 2, 3, ...)
-    // const now = new Date();
-    // const date = `${now.getFullYear()}년 ${
-    //   now.getMonth() + 1
-    // }월 ${now.getDate()}일`;
-    // Date date
-
-    await client.post("/article", {
-      ...articleData,
-    });
+    // 수정 중일 때는 update해야 함
+    if (articleData) {
+      await client.patch(`article/${articleData.id}}`, articleData);
+    } else {
+      await client.post("/article", {
+        ...articleData,
+      });
+    }
 
     navigate("/");
   };
@@ -49,11 +45,9 @@ const PublishScreen = ({ articleData, onDataChange, setIsPublished }) => {
 
     formData.append("file", imageFile);
     const imageResponse = await imageClient.post("", formData);
-    console.log(`imageResopnse`, imageResponse);
 
     // request body / response body
     const imageUrl = imageResponse.data.url;
-    console.log(`imageUrl`, imageUrl);
     onDataChange("thumbnail", imageUrl);
   };
 

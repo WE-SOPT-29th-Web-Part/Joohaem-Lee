@@ -9,15 +9,16 @@ import { Tag } from "../components/Write/ArticleTags";
 
 const Article = () => {
   const location = useLocation();
+  const article = location.state;
   console.log(`location`, location);
-  const { title, body, thumbnail, date, tags } = location.state;
+  const { title, body, thumbnail, date, tags } = article;
   console.log(`tags`, tags);
 
   return (
     <section>
       <Header />
       <h1>{title}</h1>
-      <ArticleOptions />
+      <ArticleOptions article={article} />
       <section>
         <span>이주함</span>
         <span>•</span>

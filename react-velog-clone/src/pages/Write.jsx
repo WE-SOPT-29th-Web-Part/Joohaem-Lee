@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 import ArticleTitle from "../components/Write/ArticleTitle";
 import ArticleTags from "../components/Write/ArticleTags";
 import ArticleBody from "../components/Write/ArticleBody";
@@ -7,14 +8,20 @@ import ArticleFooter from "../components/Write/ArticleFooter";
 import PublishScreen from "../components/Write/PublishScreen";
 
 const Write = () => {
-  const [articleData, setArticleData] = useState({
-    title: "",
-    body: "",
-    summary: "",
-    series: "", // 미완
-    tags: [],
-    thumbnail: "",
-  });
+  const location = useLocation();
+  const article = location.state;
+
+  const [articleData, setArticleData] = useState(
+    // ??는 ||와 달리 undefined에 대해 구별 (0에 대한 건 넘어가줌)
+    article ?? {
+      title: "",
+      body: "",
+      summary: "",
+      series: "", // 미완
+      tags: [],
+      thumbnail: "",
+    }
+  );
   const [isPublished, setIsPublished] = useState(false);
 
   const handleDataChange = (key, value) => {
@@ -41,7 +48,7 @@ const Write = () => {
 
   return (
     <StyledMain>
-      <ArticleTitle onDataChange={handleDataChange} />
+      <ArticleTitle title={articleData.title} onDataChange={handleDataChange} />
       <StyledHr noshade />
       <ArticleTags
         tags={articleData.tags}
@@ -50,7 +57,7 @@ const Write = () => {
         onDeleteTag={handleTagDelete}
       />
       <StyledHr noshade />
-      <ArticleBody onDataChange={handleDataChange} />
+      <ArticleBody body={articleData.body} onDataChange={handleDataChange} />
       <ArticleFooter setIsPublished={setIsPublished} />
       {isPublished && (
         <PublishScreen
