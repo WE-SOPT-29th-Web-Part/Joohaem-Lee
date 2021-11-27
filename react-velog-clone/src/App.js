@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Write from "./pages/Write";
+import Article from "./pages/Article";
 import ArticlesContainer from "./components/Home/ArticlesContainer";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="" element={<ArticlesContainer />} />
             <Route path="series" element={<p>This is Series</p>} />
           </Route>
+          <Route path="article/:id" element={<Article />} />
           <Route path="/write" element={<Write />} />
           <Route path="/*" element={<p>Page Not Found</p>} />
         </Routes>

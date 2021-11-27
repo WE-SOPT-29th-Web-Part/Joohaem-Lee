@@ -1,12 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const ArticlesCard = ({ article }) => {
-  const { title, summary, tags, thumbnail, date } = article;
+  const { id, title, summary, tags, thumbnail, date } = article;
   return (
     <Article>
-      <Img src={thumbnail} alt="이미지" />
-      <H3>{title}</H3>
+      <Link to={`article/${id}`} state={article}>
+        <Img src={thumbnail} alt="이미지" />
+        <H3>{title}</H3>
+      </Link>
       <H4>{summary}</H4>
       <TagsWrapper>
         {tags.map((tag) => (
