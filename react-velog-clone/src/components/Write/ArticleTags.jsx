@@ -35,11 +35,11 @@ const ArticleTags = ({ tags, articleData, onAddTag, onDeleteTag }) => {
   );
 };
 
-const Tags = styled.section`
+export const Tags = styled.section`
   display: flex;
   flex-wrap: wrap;
 `;
-const Tag = styled.span`
+export const Tag = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;

@@ -4,6 +4,8 @@ import ArticleOptions from "../components/article/ArticleOptions";
 import Header from "../components/common/Header";
 import ImageWrapper from "../components/common/ImageWrapper";
 import Profile from "../components/Home/Profile";
+import { Tags } from "../components/Write/ArticleTags";
+import { Tag } from "../components/Write/ArticleTags";
 
 const Article = () => {
   const location = useLocation();
@@ -25,11 +27,11 @@ const Article = () => {
         <span key={tag}>{tag}</span>
       ))} */}
       <Profile />
-      {thumbnail && (
+      {/* {thumbnail && (
         <ImageWrapper ratio="50%">
           <img src={thumbnail} alt="thumbnail" />
         </ImageWrapper>
-      )}
+      )} */}
       <section>{body}</section>
     </section>
   );
