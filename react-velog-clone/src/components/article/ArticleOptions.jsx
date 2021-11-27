@@ -1,7 +1,14 @@
 import React from "react";
+import { client } from "../../libs/api";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ArticleOptions = () => {
-  const handleArticleDelete = () => {};
+  const params = useParams();
+  const navigate = useNavigate();
+  const handleArticleDelete = async (e) => {
+    await client.delete(`article/${params.id}`);
+    navigate("/");
+  };
   return (
     <div>
       <button>통계</button>

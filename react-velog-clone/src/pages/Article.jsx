@@ -23,9 +23,9 @@ const Article = () => {
         <span>•</span>
         <span>{date}</span>
       </section>
-      {/* {tags.map((tag) => (
+      {tags.map((tag) => (
         <span key={tag}>{tag}</span>
-      ))} */}
+      ))}
       <Profile />
       {/* {thumbnail && (
         <ImageWrapper ratio="50%">
