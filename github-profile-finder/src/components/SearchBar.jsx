@@ -28,7 +28,6 @@ const SearchBar = ({ userInfo, setUserInfo }) => {
     if (history.length >= 3) return;
     if (history.includes(userName)) return;
     setHistory((currentHistory) => {
-      console.log(`currentHistory - `, currentHistory);
       return [...currentHistory, userName];
     });
   };
@@ -37,11 +36,13 @@ const SearchBar = ({ userInfo, setUserInfo }) => {
   useEffect(() => {
     localStorage.getItem("history") &&
       setHistory(JSON.parse(localStorage.getItem("history")));
+    console.log(`useEffect-getItem`);
   }, []);
 
-  // of history
+  // when mounting && of history
   useEffect(() => {
     localStorage.setItem("history", JSON.stringify(history));
+    console.log(`useEffect-setItem`);
   }, [history]);
 
   // ------------------------------------------------------------------------

@@ -34,13 +34,21 @@ const List = styled.li`
 
 function History({ history, setHistory, setUserInfo }) {
   const selectUser = (e) => {
-    // console.log(e.target.innerText);
+    console.log(e.target.innerText);
     setUserInfo((currentUserInfo) => ({
       ...currentUserInfo,
       data: e.target.innerText,
     }));
   };
-  const removeUser = () => {};
+
+  const removeUser = (e) => {
+    // const _targetText = e.target.previousSibling.innerText;
+    // console.log(`_targetText`, _targetText);
+    // const _targetIdx = history.findIndex((el) => el === _targetText);
+    // const _tempHistory = history.splice(_targetIdx, 1);
+    // setHistory(_tempHistory);
+    // console.log(`_targetIdx`, _targetIdx);
+  };
 
   return (
     <Wrapper>

@@ -9,9 +9,9 @@ function App() {
     status: "idle", // 아무 데이터도 받아오지 않은 상태
   });
 
-  useEffect(() => {
-    console.log(`userInfo - `, userInfo);
-  }, [userInfo]);
+  // useEffect(() => {
+  //   console.log(`userInfo - `, userInfo);
+  // }, [userInfo]);
 
   return (
     <div className="App">
