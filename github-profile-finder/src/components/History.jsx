@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const Wrapper = styled.ul`
   position: absolute;
@@ -33,21 +34,40 @@ const List = styled.li`
 `;
 
 function History({ history, setHistory, setUserInfo }) {
-  const selectUser = (e) => {
-    console.log(e.target.innerText);
+  const selectUser = async (e) => {
+    const _targetUser = e.target.innerText;
+
+    //SearchBar - getApi function
     setUserInfo((currentUserInfo) => ({
       ...currentUserInfo,
-      data: e.target.innerText,
+      status: "pending",
     }));
+
+    try {
+      const { data } = await axios.get(
+        `https://api.github.com/users/${_targetUser}`
+      );
+
+      setUserInfo((currentUserInfo) => ({
+        ...currentUserInfo,
+        data,
+        status: "resolved",
+      }));
+    } catch (error) {
+      setUserInfo((currentUserInfo) => ({
+        ...currentUserInfo,
+        data: null,
+        status: "rejected",
+      }));
+      console.log(`error : `, error);
+    }
   };
 
   const removeUser = (e) => {
-    // const _targetText = e.target.previousSibling.innerText;
-    // console.log(`_targetText`, _targetText);
-    // const _targetIdx = history.findIndex((el) => el === _targetText);
+    const _targetText = e.target.previousSibling.innerText;
+    const _targetIdx = history.findIndex((el) => el === _targetText);
     // const _tempHistory = history.splice(_targetIdx, 1);
     // setHistory(_tempHistory);
-    // console.log(`_targetIdx`, _targetIdx);
   };
 
   return (
