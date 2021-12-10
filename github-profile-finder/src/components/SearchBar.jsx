@@ -47,6 +47,8 @@ const SearchBar = ({ setUserInfo }) => {
 
   const getApi = async (e) => {
     e.preventDefault();
+
+    // getApi-----
     setUserInfo((currentUserInfo) => ({
       ...currentUserInfo,
       status: "pending",
@@ -55,13 +57,11 @@ const SearchBar = ({ setUserInfo }) => {
     try {
       const { data } = await axios.get(`https://api.github.com/users/${user}`);
 
-      getHistory(user);
       setUserInfo((currentUserInfo) => ({
         ...currentUserInfo,
         data,
         status: "resolved",
       }));
-      setUser("");
     } catch (error) {
       setUserInfo((currentUserInfo) => ({
         ...currentUserInfo,
@@ -70,11 +70,11 @@ const SearchBar = ({ setUserInfo }) => {
       }));
       console.log(`error : `, error);
     }
-  };
+    // -----getApi
 
-  // useEffect(() => {
-  //   getApi();
-  // }, [userInfo]);
+    getHistory(user);
+    setUser("");
+  };
 
   return (
     <Form onSubmit={getApi}>

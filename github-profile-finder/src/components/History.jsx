@@ -37,7 +37,7 @@ function History({ history, setHistory, setUserInfo }) {
   const selectUser = async (e) => {
     const _targetUser = e.target.innerText;
 
-    //SearchBar - getApi function
+    // getApi-----
     setUserInfo((currentUserInfo) => ({
       ...currentUserInfo,
       status: "pending",
@@ -61,6 +61,7 @@ function History({ history, setHistory, setUserInfo }) {
       }));
       console.log(`error : `, error);
     }
+    // -----getApi
   };
 
   const removeUser = (e) => {
