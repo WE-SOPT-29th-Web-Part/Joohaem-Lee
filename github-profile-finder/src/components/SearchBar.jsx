@@ -36,13 +36,11 @@ const SearchBar = ({ userInfo, setUserInfo }) => {
   useEffect(() => {
     localStorage.getItem("history") &&
       setHistory(JSON.parse(localStorage.getItem("history")));
-    console.log(`useEffect-getItem`);
   }, []);
 
   // when mounting && of history
   useEffect(() => {
     localStorage.setItem("history", JSON.stringify(history));
-    console.log(`useEffect-setItem`);
   }, [history]);
 
   // ------------------------------------------------------------------------
