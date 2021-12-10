@@ -3,7 +3,7 @@ import PendingResult from "./PendingResult";
 import Result from "./Result";
 import RejectedResult from "./RejectedResult";
 
-const Result2 = ({ setUserInfo, userInfo }) => {
+const ResultCase = ({ setUserInfo, userInfo }) => {
   switch (userInfo.status) {
     case "pending":
       return <PendingResult />;
@@ -17,4 +17,4 @@ const Result2 = ({ setUserInfo, userInfo }) => {
   }
 };
 
-export default Result2;
+export default ResultCase;
