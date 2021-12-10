@@ -20,7 +20,7 @@ const Input = styled.input`
   color: rgb(220, 230, 231);
 `;
 
-const SearchBar = ({ userInfo, setUserInfo }) => {
+const SearchBar = ({ setUserInfo }) => {
   const [user, setUser] = useState("");
   const [history, setHistory] = useState([]);
 
