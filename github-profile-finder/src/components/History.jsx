@@ -65,9 +65,8 @@ function History({ history, setHistory, setUserInfo }) {
 
   const removeUser = (e) => {
     const _targetText = e.target.previousSibling.innerText;
-    const _targetIdx = history.findIndex((el) => el === _targetText);
-    // const _tempHistory = history.splice(_targetIdx, 1);
-    // setHistory(_tempHistory);
+    const _tempHistory = history.filter((el) => el !== _targetText);
+    setHistory(_tempHistory);
   };
 
   return (
@@ -75,7 +74,9 @@ function History({ history, setHistory, setUserInfo }) {
       {history.map((history, index) => (
         <List key={`hisory-${index}`}>
           <p onClick={selectUser}>{history}</p>
-          <button onClick={removeUser}>❌</button>
+          <button type="button" onClick={removeUser}>
+            ❌
+          </button>
         </List>
       ))}
     </Wrapper>
