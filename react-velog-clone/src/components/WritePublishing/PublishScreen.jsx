@@ -7,7 +7,6 @@ import PublishImage from "./PublishImage";
 
 const PublishScreen = ({ articleData, onDataChange, setIsPublished }) => {
   const navigate = useNavigate();
-  console.log(navigate);
 
   const handlePost = async () => {
     await client.post("/article", {
