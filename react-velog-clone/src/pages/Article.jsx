@@ -10,7 +10,6 @@ import { Tag } from "../components/Write/ArticleTags";
 const Article = () => {
   const location = useLocation();
   const article = location.state;
-  console.log(`location`, location);
   const { title, body, thumbnail, date, tags } = article;
 
   return (
@@ -29,11 +28,11 @@ const Article = () => {
         ))}
       </Tags>
       <Profile />
-      {/* {thumbnail && (
+      {thumbnail && (
         <ImageWrapper ratio="50%">
           <img src={thumbnail} alt="thumbnail" />
         </ImageWrapper>
-      )} */}
+      )}
       <section>{body}</section>
     </section>
   );

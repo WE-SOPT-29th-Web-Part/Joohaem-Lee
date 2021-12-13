@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-// import ImageWrapper from "../common/ImageWrapper";
+import ImageWrapper from "../common/ImageWrapper";
 import { Tags } from "../Write/ArticleTags";
 import { Tag } from "../Write/ArticleTags";
 
@@ -10,9 +10,9 @@ const ArticlesCard = ({ article }) => {
   return (
     <Article>
       <Link to={`article/${id}`} state={article}>
-        {/* <ImageWrapper ratio="56%"> */}
-        <Img src={thumbnail} alt="이미지" />
-        {/* </ImageWrapper> */}
+        <ImageWrapper ratio="56%">
+          <Img src={thumbnail} alt="이미지" />
+        </ImageWrapper>
         <H3>{title}</H3>
       </Link>
       <H4>{summary}</H4>
@@ -40,12 +40,11 @@ const Article = styled.article`
 `;
 
 const Img = styled.img`
-  width: 100%;
-  margin: auto auto 0.75rem;
   border-radius: 0.25rem;
 `;
 
 const H3 = styled.h3`
+  margin-top: 1rem;
   font-size: 1.25rem;
   font-weight: 700;
 `;

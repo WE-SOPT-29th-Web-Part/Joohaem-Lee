@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { imageClient } from "../../libs/api";
+import ImageWrapper from "../common/ImageWrapper";
 
 const PublishImage = ({ onDataChange }) => {
   const [thumbnailImage, setThumbnailImage] = useState("");
@@ -20,18 +21,27 @@ const PublishImage = ({ onDataChange }) => {
     setThumbnailImage(imageUrl);
   };
 
+  const deleteImage = () => {
+    onDataChange("thumbnail", "");
+
+    setThumbnailImage("");
+  };
+
   return (
     <>
       <H3>포스트 미리보기</H3>
       <ThumnailWrapper>
         {thumbnailImage ? (
-          <ThumbnailImage src={thumbnailImage} alt="thumbnail" />
+          <ImageWrapper ratio="56%">
+            <ThumbnailImage src={thumbnailImage} alt="thumbnail" />
+          </ImageWrapper>
         ) : (
           <ThumbnailNone>✖</ThumbnailNone>
         )}
 
         <InputWrapper>
           <InputImage id="thumbnail" type="file" onChange={handleImageChange} />
+          <button onClick={deleteImage}>썸네일 삭제</button>
           <InputLabel for="thumbnail">썸네일 업로드</InputLabel>
         </InputWrapper>
       </ThumnailWrapper>
@@ -66,7 +76,7 @@ const ThumbnailNone = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-color: var(--main-lightgray-color);
 `;
 
