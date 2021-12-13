@@ -41,7 +41,7 @@ const PublishImage = ({ onDataChange }) => {
 
         <InputWrapper>
           <InputImage id="thumbnail" type="file" onChange={handleImageChange} />
-          <button onClick={deleteImage}>썸네일 삭제</button>
+          <NoImageBtn onClick={deleteImage}>썸네일 삭제</NoImageBtn>
           <InputLabel for="thumbnail">썸네일 업로드</InputLabel>
         </InputWrapper>
       </ThumnailWrapper>
@@ -92,6 +92,19 @@ const InputImage = styled.input`
   overflow: hidden;
   clip: rect(1px 1px 1px 1px);
   margin: 0;
+`;
+
+const NoImageBtn = styled.button`
+  width: 7rem;
+  height: 2.5rem;
+  color: white;
+  font-size: 1.125rem;
+  font-weight: 500;
+  background-color: var(--main-lightgray-color);
+  &:hover {
+    font-weight: 700;
+    cursor: pointer;
+  }
 `;
 
 const InputLabel = styled.label`
