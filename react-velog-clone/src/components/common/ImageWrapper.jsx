@@ -8,6 +8,7 @@ const ImageWrapper = ({ ratio, children }) => {
 
 export default ImageWrapper;
 
+// 50% -> 가로 세로 2:1
 const StyledImgWrapper = styled.div`
   padding-top: ${({ ratio }) => ratio};
 

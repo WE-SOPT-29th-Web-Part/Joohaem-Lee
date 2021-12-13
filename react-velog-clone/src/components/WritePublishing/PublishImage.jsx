@@ -12,9 +12,8 @@ const PublishImage = ({ onDataChange }) => {
     const imageFile = e.target.files[0];
 
     formData.append("file", imageFile);
+    // request body: formData / response body: post의 결과값
     const imageResponse = await imageClient.post("", formData);
-
-    // request body / response body
     const imageUrl = imageResponse.data.url;
     onDataChange("thumbnail", imageUrl);
 

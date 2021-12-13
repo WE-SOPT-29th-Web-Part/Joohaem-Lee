@@ -1,21 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+// import ImageWrapper from "../common/ImageWrapper";
+import { Tags } from "../Write/ArticleTags";
+import { Tag } from "../Write/ArticleTags";
 
 const ArticlesCard = ({ article }) => {
   const { id, title, summary, tags, thumbnail, date } = article;
   return (
     <Article>
       <Link to={`article/${id}`} state={article}>
+        {/* <ImageWrapper ratio="56%"> */}
         <Img src={thumbnail} alt="이미지" />
+        {/* </ImageWrapper> */}
         <H3>{title}</H3>
       </Link>
       <H4>{summary}</H4>
-      <TagsWrapper>
+      <CustomTags>
         {tags.map((tag) => (
-          <Tag key={`tag-${tag}`}>{tag}</Tag>
+          <CustomTag key={`tag-${tag}`}>{tag}</CustomTag>
         ))}
-      </TagsWrapper>
+      </CustomTags>
       <Date>{date}</Date>
     </Article>
   );
@@ -56,23 +61,18 @@ const H4 = styled.h4`
   word-break: break-all;
 `;
 
-const TagsWrapper = styled.div`
-  display: flex;
+const CustomTags = styled(Tags)`
   justify-content: end;
-  flex-wrap: wrap;
 `;
 
-const Tag = styled.span`
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+const CustomTag = styled(Tag)`
   height: 1.5rem;
   padding: 0 0.75rem;
-  border-radius: 1rem;
-  background: rgb(241, 243, 245);
   font-size: 0.75rem;
-  color: rgb(12, 166, 120);
-  margin-left: 0.5rem;
+  margin: 0 0 0 0.5rem;
+  &:hover {
+    cursor: default;
+  }
 `;
 
 const Date = styled.p`
