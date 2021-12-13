@@ -5,7 +5,7 @@ import ArticleTitle from "../components/Write/ArticleTitle";
 import ArticleTags from "../components/Write/ArticleTags";
 import ArticleBody from "../components/Write/ArticleBody";
 import ArticleFooter from "../components/Write/ArticleFooter";
-import PublishScreen from "../components/Write/PublishScreen";
+import PublishScreen from "../components/WritePublishing/PublishScreen";
 
 const Write = () => {
   const navigate = useNavigate();
