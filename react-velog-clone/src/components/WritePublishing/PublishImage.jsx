@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { imageClient } from "../../libs/api";
 import ImageWrapper from "../common/ImageWrapper";
 
-const PublishImage = ({ onDataChange }) => {
-  const [thumbnailImage, setThumbnailImage] = useState("");
+const PublishImage = ({ thumbnail, onDataChange }) => {
+  const [thumbnailImage, setThumbnailImage] = useState(thumbnail);
 
   // 서버에 이미지 POST, 정제된 이미지 url을 GET
   const handleImageChange = async (e) => {

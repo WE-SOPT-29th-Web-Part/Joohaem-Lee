@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const PublishSummary = ({ onDataChange }) => {
+const PublishSummary = ({ summary, onDataChange }) => {
   const MAX_NUM = 150;
   const [textCnt, setTextCnt] = useState(0);
 
@@ -26,6 +26,7 @@ const PublishSummary = ({ onDataChange }) => {
       <Textarea
         onChange={handleChange}
         placeholder="당신의 포스트를 짧게 소개해보세요."
+        value={summary}
       />
       <TextCnt>{textCnt}/150</TextCnt>
     </>

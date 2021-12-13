@@ -10,9 +10,11 @@ const ArticlesCard = ({ article }) => {
   return (
     <Article>
       <Link to={`article/${id}`} state={article}>
-        <ImageWrapper ratio="56%">
-          <Img src={thumbnail} alt="이미지" />
-        </ImageWrapper>
+        {thumbnail && (
+          <ImageWrapper ratio="56%">
+            <Img src={thumbnail} alt="이미지" />
+          </ImageWrapper>
+        )}
         <H3>{title}</H3>
       </Link>
       <H4>{summary}</H4>

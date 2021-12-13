@@ -9,6 +9,7 @@ const PublishScreen = ({
   setIsPublished,
   createArticle,
 }) => {
+  const { thumbnail, summary } = articleData;
   const handlePost = async () => {
     createArticle();
   };
@@ -16,8 +17,8 @@ const PublishScreen = ({
   return (
     <StyledPublishedWrapper>
       <StyledLeftSection>
-        <PublishImage onDataChange={onDataChange} />
-        <PublishSummary onDataChange={onDataChange} />
+        <PublishImage thumbnail={thumbnail} onDataChange={onDataChange} />
+        <PublishSummary summary={summary} onDataChange={onDataChange} />
       </StyledLeftSection>
       <StyledRightSection>
         <div>
