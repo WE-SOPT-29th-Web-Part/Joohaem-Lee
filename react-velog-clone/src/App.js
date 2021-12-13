@@ -8,11 +8,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/write" component={Write} />
-          <Route component={() => <p>Page Not Found</p>} />
-        </Switch> */}
         <Routes>
           <Route path="/*" element={<Home />}>
             <Route path="" element={<ArticlesContainer />} />
