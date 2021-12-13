@@ -12,7 +12,6 @@ const Article = () => {
   const article = location.state;
   console.log(`location`, location);
   const { title, body, thumbnail, date, tags } = article;
-  console.log(`tags`, tags);
 
   return (
     <section>
@@ -24,9 +23,11 @@ const Article = () => {
         <span>•</span>
         <span>{date}</span>
       </section>
-      {tags.map((tag) => (
-        <span key={tag}>{tag}</span>
-      ))}
+      <Tags>
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </Tags>
       <Profile />
       {/* {thumbnail && (
         <ImageWrapper ratio="50%">

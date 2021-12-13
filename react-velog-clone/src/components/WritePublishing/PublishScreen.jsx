@@ -1,19 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { client } from "../../libs/api";
-import { useNavigate } from "react-router";
 import PublishSummary from "./PublishSummary";
 import PublishImage from "./PublishImage";
 
-const PublishScreen = ({ articleData, onDataChange, setIsPublished }) => {
-  const navigate = useNavigate();
-
+const PublishScreen = ({
+  articleData,
+  onDataChange,
+  setIsPublished,
+  createArticle,
+}) => {
   const handlePost = async () => {
-    await client.post("/article", {
-      ...articleData,
-    });
-
-    navigate("/");
+    createArticle();
   };
 
   return (

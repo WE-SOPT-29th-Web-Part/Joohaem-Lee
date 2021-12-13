@@ -6,6 +6,7 @@ import ArticleTags from "../components/Write/ArticleTags";
 import ArticleBody from "../components/Write/ArticleBody";
 import ArticleFooter from "../components/Write/ArticleFooter";
 import PublishScreen from "../components/WritePublishing/PublishScreen";
+import { client } from "../libs/api";
 
 const Write = () => {
   const navigate = useNavigate();
@@ -49,7 +50,12 @@ const Write = () => {
 
   const createArticle = async () => {
     if (article) {
+      await client.patch(`/article/${article.id}`, articleData);
+      navigate(`/article/${article.id}`, { state: articleData });
+      return;
     }
+    await client.post("/article", articleData);
+    navigate("/");
   };
 
   return (
@@ -70,6 +76,7 @@ const Write = () => {
           articleData={articleData}
           onDataChange={handleDataChange}
           setIsPublished={setIsPublished}
+          createArticle={createArticle}
         />
       )}
     </StyledMain>
