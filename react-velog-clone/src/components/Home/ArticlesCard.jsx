@@ -35,7 +35,7 @@ const Article = styled.article`
 `;
 
 const Img = styled.img`
-  width: 40%;
+  width: 100%;
   margin: auto auto 0.75rem;
   border-radius: 0.25rem;
 `;
