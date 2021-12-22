@@ -13,7 +13,7 @@ const Header = () => {
     // </header>
 
     <StyledHeader>
-      <div>LOGO</div>
+      <Link to="/">LOGO</Link>
       <Nav>
         <SearchWrapper>
           <SearchIcon className="material-icons">search</SearchIcon>

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const ArticleTags = ({ tags, articleData, setArticleData }) => {
+const ArticleTags = ({ tags, articleData, onAddTag, onDeleteTag }) => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       const newTag = e.target.value;
@@ -12,23 +12,17 @@ const ArticleTags = ({ tags, articleData, setArticleData }) => {
       //   tags: [...articleData.tags, newTag],
       // }));
       // 비동기 -> 불변성 유지 필요
-      const tempData = { ...articleData };
-      tempData.tags = [...tempData.tags, newTag];
-      setArticleData(tempData);
+      onAddTag("tags", newTag);
       e.target.value = "";
     }
   };
-
-  const handleClick = (e) => {
-    const tempData = { ...articleData };
-    tempData.tags = tempData.tags.filter((tag) => tag !== e.target.innerText);
-    setArticleData(tempData);
-  };
-
   return (
     <Tags>
       {tags.map((tag, idx) => (
-        <Tag key={`tag-${idx}`} onClick={handleClick}>
+        <Tag
+          key={`tag-${idx}`}
+          onClick={(e) => onDeleteTag(e.target.innerText)}
+        >
           {tag}
         </Tag>
       ))}
@@ -41,11 +35,11 @@ const ArticleTags = ({ tags, articleData, setArticleData }) => {
   );
 };
 
-const Tags = styled.section`
+export const Tags = styled.section`
   display: flex;
   flex-wrap: wrap;
 `;
-const Tag = styled.span`
+export const Tag = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;

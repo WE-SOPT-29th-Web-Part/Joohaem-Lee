@@ -4,11 +4,11 @@ import { client } from "../../libs/api";
 import ArticleCard from "./ArticlesCard";
 
 const ArticlesContainer = () => {
-  const [articleData, setArticleData] = useState([]);
+  const [articlesGetting, setArticlesGetting] = useState([]);
 
   const getArticleData = async () => {
     const { data } = await client.get("/article");
-    setArticleData(data);
+    setArticlesGetting(data);
   };
 
   // Mount 시 API 불러오기
@@ -18,12 +18,18 @@ const ArticlesContainer = () => {
 
   return (
     <Section>
-      {articleData.map((article) => (
-        <ArticleCard key={`article-${article.id}`} article={article} />
-      ))}
+      {articlesGetting.length !== 0 ? (
+        articlesGetting.map((article) => (
+          <ArticleCard key={`article-${article.id}`} article={article} />
+        ))
+      ) : (
+        <NoArticleText>게시글이 없습니다.</NoArticleText>
+      )}
     </Section>
   );
 };
+
+export default ArticlesContainer;
 
 const Section = styled.section`
   width: 60%;
@@ -32,4 +38,9 @@ const Section = styled.section`
   flex-direction: column-reverse;
 `;
 
-export default ArticlesContainer;
+const NoArticleText = styled.div`
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+`;
