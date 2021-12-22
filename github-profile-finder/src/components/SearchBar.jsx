@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import History from "./History";
+
+const Form = styled.form`
+  position: relative;
+`;
 
 const Input = styled.input`
   width: 100%;
@@ -17,9 +22,33 @@ const Input = styled.input`
 
 const SearchBar = ({ setUserInfo }) => {
   const [user, setUser] = useState("");
+  const [history, setHistory] = useState([]);
+
+  const getHistory = (userName) => {
+    if (history.length >= 3) return;
+    if (history.includes(userName)) return;
+    setHistory((currentHistory) => {
+      return [...currentHistory, userName];
+    });
+  };
+
+  // when mouting
+  useEffect(() => {
+    localStorage.getItem("history") &&
+      setHistory(JSON.parse(localStorage.getItem("history")));
+  }, []);
+
+  // when mounting && of history
+  useEffect(() => {
+    localStorage.setItem("history", JSON.stringify(history));
+  }, [history]);
+
+  // ------------------------------------------------------------------------
 
   const getApi = async (e) => {
     e.preventDefault();
+
+    // getApi-----
     setUserInfo((currentUserInfo) => ({
       ...currentUserInfo,
       status: "pending",
@@ -28,32 +57,39 @@ const SearchBar = ({ setUserInfo }) => {
     try {
       const { data } = await axios.get(`https://api.github.com/users/${user}`);
 
-      console.log(data);
       setUserInfo((currentUserInfo) => ({
         ...currentUserInfo,
         data,
         status: "resolved",
       }));
-      setUser("");
     } catch (error) {
       setUserInfo((currentUserInfo) => ({
         ...currentUserInfo,
         data: null,
         status: "rejected",
       }));
-      console.log(error);
+      console.log(`error : `, error);
     }
+    // -----getApi
+
+    getHistory(user);
+    setUser("");
   };
 
   return (
-    <form onSubmit={getApi}>
+    <Form onSubmit={getApi}>
       <Input
         value={user}
         onChange={(e) => setUser(e.target.value)}
         type="text"
         placeholder="Github 프로필을 검색해보세요"
       />
-    </form>
+      <History
+        history={history}
+        setHistory={setHistory}
+        setUserInfo={setUserInfo}
+      />
+    </Form>
   );
 };
 

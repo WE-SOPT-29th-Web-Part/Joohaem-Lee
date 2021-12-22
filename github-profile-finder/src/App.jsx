@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
-import Result2 from "./components/Result2";
+import ResultCase from "./components/ResultCase";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Header />
       <SearchBar setUserInfo={setUserInfo} />
-      <Result2 userInfo={userInfo} setUserInfo={setUserInfo} />
+      <ResultCase userInfo={userInfo} setUserInfo={setUserInfo} />
     </div>
   );
 }
