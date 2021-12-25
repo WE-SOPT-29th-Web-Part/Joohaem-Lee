@@ -1,0 +1,114 @@
+/* reset */
+* {
+  box-sizing: border-box;
+}
+body, h1, p {
+  margin: 0;
+}
+body {
+  height: 100vh;
+  /* todos growing */
+  display: flex;
+  flex-direction: column;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+button {
+  outline: 0;
+  cursor: pointer;
+  border: 0;
+}
+input {
+  outline: 0;
+}
+
+/* header */
+.header {
+  height: 50px;
+  color: white;
+  background-color: thistle;
+}
+.header__logo {
+  font-size: 32px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
+
+.options {
+  text-align: center;
+  margin: 10px 0;
+}
+.options__btn {
+  background-color: orange;
+  color: white;
+}
+
+/* main */
+.todos {
+  background-color: whitesmoke;
+  display: flex;
+  /* todos growing */
+  flex-grow: 1;
+}
+.todos__today,
+.todos__tomorrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* display로 구현할 경우, width 조정 없이 바로 사라져 애니메이션 적용이 안 됨 */
+  /* display: none; */
+  width: 0%;
+  visibility: hidden;
+  transition: width 0.3s ease-in-out;
+}
+.todos__today.open,
+.todos__tomorrow.open {
+  /* display: flex; */
+  width: 100%;
+  visibility: visible;
+}
+.todos__today {
+  border-right: 1px solid black;
+}
+.todos__items {
+  /* todos__items growing */
+  flex-grow: 1;
+  width: 100%;
+  padding: 0 20px;
+}
+.todos__item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.todos__name {
+  height: 36px;
+  line-height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.todos__input {
+  width: 100%;
+  border: 0;
+}
+.todos__add {
+  height: 30px;
+  width: 100%;
+}
+
+/* footer */
+.footer {
+  color: white;
+  background-color: thistle;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
