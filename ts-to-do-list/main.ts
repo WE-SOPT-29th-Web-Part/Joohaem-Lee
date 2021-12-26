@@ -14,6 +14,7 @@ const isHTMLInputElement = (
 const safeQuerySelector = (selector: string) => {
   const element = document.querySelector(selector);
   
+  // 예외 처리를 null로 지정하여 반환
   if (!element) return null;
   if (!isHTMLElement(element)) return null;
   
