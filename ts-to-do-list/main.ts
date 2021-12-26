@@ -5,7 +5,7 @@ const addBtns = document.querySelectorAll(".todos__add");
 const items = document.querySelectorAll(".todos__items");
 
 // 리스트 추가 함수
-const onAdd = (index) => {
+const onAdd = (index: number) => {
   const input = inputs[index];
   // console.log(index);
   if(!input.value) return;
