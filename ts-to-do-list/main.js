@@ -1,48 +1,74 @@
 "use strict";
+// [혁이 코드 참조] 타입 추론-단언???
+var isHTMLElement = function (someElement) {
+    return someElement instanceof HTMLElement;
+};
+var isHTMLInputElement = function (someElement) {
+    return "value" in someElement;
+};
+var safeQuerySelector = function (selector) {
+    var element = document.querySelector(selector);
+    if (!element)
+        return null;
+    if (!isHTMLElement(element))
+        return null;
+    return element;
+};
 var inputs = document.querySelectorAll(".todos__input");
 var addBtns = document.querySelectorAll(".todos__add");
 var items = document.querySelectorAll(".todos__items");
-// 리스트 추가 함수
 var onAdd = function (index) {
     var input = inputs[index];
-    // console.log(index);
-    if (!input.value)
+    if (!isHTMLInputElement(input))
         return;
-    // console.log(index);
     var li = document.createElement("li");
     var p = document.createElement("p");
     var deleteBtn = document.createElement("button");
-    // class 지정
     li.setAttribute("class", "todos__item");
     p.setAttribute("class", "todos__name");
     deleteBtn.setAttribute("class", "todos__delete");
-    // 텍스트
     deleteBtn.innerText = "❌";
     p.innerText = input.value;
-    // 삭제 기능
     deleteBtn.addEventListener("click", function () {
         li.remove();
     });
-    // 추가
     items[index].appendChild(li);
     li.appendChild(p);
     li.appendChild(deleteBtn);
-    // input 창 초기화
     input.value = "";
 };
-// 추가 버튼 클릭
-addBtns.forEach(function (addBtn, index) { return addEventListener("click", function () {
-    onAdd(index);
-}); });
-// 추가 버튼 Enter
-inputs.forEach(function (input, index) { return addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
+addBtns.forEach(function (addBtn, index) {
+    if (!isHTMLElement(addBtn))
+        return false;
+    addBtn.addEventListener("click", function (e) {
         onAdd(index);
-    }
-}); });
-var nav = document.querySelector(".options");
+    });
+});
+inputs.forEach(function (input, index) {
+    // 타입 단언???
+    // input이 그냥 Element라면, e는 그냥 Event로 추론됨
+    // 이 때, input을 InputElement로, "keyup" 이벤트 핸들러를 지정함으로써
+    // e가 KeyboardEvent로 추론됨
+    // 만약 "mouseUp" 이벤트 핸들러라면, MouseEvent로 추론됨
+    if (!isHTMLInputElement(input))
+        return false;
+    input.addEventListener("keyup", function (e) {
+        if (!input.value)
+            return;
+        // 타입 단언???
+        if (e.key === "Enter") {
+            onAdd(index);
+        }
+    });
+});
+var nav = safeQuerySelector(".options");
 var todos = document.querySelectorAll(".todos > section");
-nav.addEventListener("click", function (e) {
+nav === null || nav === void 0 ? void 0 : nav.addEventListener("click", function (e) {
+    if (!e.target)
+        return false;
+    // 타입 단언???
+    if (!(e.target instanceof HTMLButtonElement))
+        return false;
     var targetClasses = e.target.classList;
     if (targetClasses.contains("options__today")) {
         todos[0].classList.add("open");
