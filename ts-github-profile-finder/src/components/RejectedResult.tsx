@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+const RejectedResult = () => {
+  return <Card>사용자가 없습니다.</Card>;
+};
+
+export default RejectedResult;
+
 const Card = styled.article`
   display: flex;
   flex-direction: column;
@@ -24,9 +30,3 @@ const Card = styled.article`
     }
   }
 `;
-
-const RejectedResult = () => {
-  return <Card>사용자가 없습니다.</Card>;
-};
-
-export default RejectedResult;

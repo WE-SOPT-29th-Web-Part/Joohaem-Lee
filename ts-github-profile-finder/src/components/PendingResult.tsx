@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+const PendingResult = () => {
+  return <Card>Pending...</Card>;
+};
+
+export default PendingResult;
+
 const Card = styled.article`
   display: flex;
   flex-direction: column;
@@ -13,9 +19,3 @@ const Card = styled.article`
   border-radius: 20px;
   position: relative;
 `;
-
-const PendingResult = () => {
-  return <Card>Pending...</Card>;
-};
-
-export default PendingResult;
