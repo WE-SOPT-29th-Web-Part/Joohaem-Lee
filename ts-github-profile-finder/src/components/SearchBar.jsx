@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
-import History from "./History.sx";
+import History from "./History.jsx";
 
 const SearchBar = ({ setUserInfo }) => {
   const [user, setUser] = useState("");

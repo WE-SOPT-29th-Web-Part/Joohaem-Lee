@@ -8,7 +8,7 @@ const ResultCase = ({ setUserInfo, userInfo }) => {
     case "pending":
       return <PendingResult />;
     case "resolved":
-      return <Result userInfo={userInfo.data} setUserInfo={setUserInfo} />;
+      return <Result userInfoData={userInfo.data} setUserInfo={setUserInfo} />;
     case "rejected":
       return <RejectedResult />;
     case "idle":

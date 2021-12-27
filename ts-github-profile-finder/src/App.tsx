@@ -5,7 +5,7 @@ import ResultCase from "./components/ResultCase";
 
 function App() {
   const [userInfo, setUserInfo] = useState({
-    data: null,
+    data: {},
     status: "idle", // 아무 데이터도 받아오지 않은 상태
   });
 

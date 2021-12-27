@@ -1,29 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 
-const Result = ({ userInfo, setUserInfo }) => {
+// interface UserInfoData {
+//   avatar_url: string;
+//   name: string;
+//   login: string;
+//   html_url: string;
+//   followers: number;
+//   following: number;
+//   public_repos: number;
+// }
+
+const Result = ({ userInfoData, setUserInfo }) => {
   return (
     <Card>
       <button onClick={() => setUserInfo({})}>닫기</button>
-      <img src={userInfo.avatar_url} alt="user" />
-      <h3>{userInfo.name}</h3>
-      <h4>{userInfo.login}</h4>
-      <p>{userInfo.bio}</p>
-      <a href={userInfo.html_url} target="_blank" rel="noopener noreferrer">
+      <img src={userInfoData.avatar_url} alt="user" />
+      <h3>{userInfoData.name}</h3>
+      <h4>{userInfoData.login}</h4>
+      <a href={userInfoData.html_url} target="_blank" rel="noopener noreferrer">
         Visit Github
       </a>
       <Ul>
         <li>
           <strong>Followers</strong>
-          {userInfo.followers}
+          {userInfoData.followers}
         </li>
         <li>
           <strong>Following</strong>
-          {userInfo.following}
+          {userInfoData.following}
         </li>
         <li>
           <strong>Repos</strong>
-          {userInfo.public_repos}
+          {userInfoData.public_repos}
         </li>
       </Ul>
     </Card>
