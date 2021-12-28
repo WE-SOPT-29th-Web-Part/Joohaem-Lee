@@ -7,13 +7,14 @@ import { UserInfo, UserInfoStatus } from "types";
 interface ResultCaseProps {
   userInfo: UserInfo;
   onUserInfoChange: (
-    targetUserInfo: UserInfo,
+    targetUserInfo: UserInfo | null,
     targetStatus: UserInfoStatus
   ) => void;
 }
 
 const ResultCase = (props: ResultCaseProps) => {
   const { userInfo, onUserInfoChange } = props;
+
   switch (userInfo.status) {
     case "pending":
       return <PendingResult />;

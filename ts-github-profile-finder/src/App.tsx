@@ -12,13 +12,20 @@ function App() {
   });
 
   const handleUserInfo = (
-    targetUserInfo: UserInfo,
+    targetUserInfo: UserInfo | null,
     targetStatus: UserInfoStatus
   ) => {
-    setUserInfo({
-      ...targetUserInfo,
-      status: targetStatus,
-    });
+    if (targetUserInfo === null) {
+      setUserInfo({
+        data: targetUserInfo,
+        status: targetStatus,
+      });
+    } else {
+      setUserInfo({
+        ...targetUserInfo,
+        status: targetStatus,
+      });
+    }
   };
 
   return (

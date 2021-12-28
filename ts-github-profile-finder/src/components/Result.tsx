@@ -1,28 +1,42 @@
 import styled from "styled-components";
+import { UserInfo, UserInfoData, UserInfoStatus } from "types";
 
-const Result = ({ userInfoData, onUserInfoChange }) => {
+interface ResultCaseProps {
+  userInfoData: UserInfoData | null;
+  onUserInfoChange: (
+    targetUserInfo: UserInfo | null,
+    targetStatus: UserInfoStatus
+  ) => void;
+}
+
+const Result = (props: ResultCaseProps) => {
+  const { userInfoData, onUserInfoChange } = props;
   return (
     <StCard>
       <button onClick={() => onUserInfoChange(null, "idle")}>닫기</button>
-      <img src={userInfoData.avatar_url} alt="user" />
-      <h3>{userInfoData.name}</h3>
-      <h4>{userInfoData.login}</h4>
-      <p>{userInfoData.bio}</p>
-      <a href={userInfoData.html_url} target="_blank" rel="noopener noreferrer">
+      <img src={userInfoData?.avatar_url} alt="user" />
+      <h3>{userInfoData?.name}</h3>
+      <h4>{userInfoData?.login}</h4>
+      <p>{userInfoData?.bio}</p>
+      <a
+        href={userInfoData?.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Visit Github
       </a>
       <StUl>
         <li>
           <strong>Followers</strong>
-          {userInfoData.followers}
+          {userInfoData?.followers}
         </li>
         <li>
           <strong>Following</strong>
-          {userInfoData.following}
+          {userInfoData?.following}
         </li>
         <li>
           <strong>Repos</strong>
-          {userInfoData.public_repos}
+          {userInfoData?.public_repos}
         </li>
       </StUl>
     </StCard>

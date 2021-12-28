@@ -3,7 +3,7 @@ import { UserInfo, UserInfoStatus } from "types";
 
 import styled from "styled-components";
 import axios from "axios";
-import History from "./History.jsx";
+import History from "./History";
 
 interface SearchBarProps {
   userInfo: UserInfo;
