@@ -4,7 +4,7 @@ import styled from "styled-components";
 import axios from "axios";
 import History from "./History.jsx";
 
-const SearchBar = ({ userInfo, onSetUserInfo }) => {
+const SearchBar = ({ userInfo, onUserInfoChange }) => {
   const [user, setUser] = useState("");
   const [history, setHistory] = useState([]);
 
@@ -33,13 +33,13 @@ const SearchBar = ({ userInfo, onSetUserInfo }) => {
     e.preventDefault();
 
     // getApi-----
-    onSetUserInfo(userInfo, "pending");
+    onUserInfoChange(userInfo, "pending");
     try {
       const { data } = await axios.get(`https://api.github.com/users/${user}`);
-      onSetUserInfo({ ...userInfo, data }, "resolved");
+      onUserInfoChange({ ...userInfo, data }, "resolved");
     } catch (error) {
       console.log(`error : `, error);
-      onSetUserInfo({ ...userInfo, data: null }, "rejected");
+      onUserInfoChange({ ...userInfo, data: null }, "rejected");
     }
     // -----getApi
 
@@ -63,7 +63,7 @@ const SearchBar = ({ userInfo, onSetUserInfo }) => {
         history={history}
         onHistoryChange={handleHistory}
         userInfo={userInfo}
-        onSetUserInfo={onSetUserInfo}
+        onUserInfoChange={onUserInfoChange}
       />
     </StForm>
   );

@@ -31,8 +31,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <SearchBar userInfo={userInfo} onSetUserInfo={handleUserInfo} />
-      <ResultCase userInfo={userInfo} onSetUserInfo={handleUserInfo} />
+      <SearchBar userInfo={userInfo} onUserInfoChange={handleUserInfo} />
+      <ResultCase userInfo={userInfo} onUserInfoChange={handleUserInfo} />
     </div>
   );
 }

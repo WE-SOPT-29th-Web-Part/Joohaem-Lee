@@ -3,13 +3,16 @@ import PendingResult from "./PendingResult";
 import Result from "./Result";
 import RejectedResult from "./RejectedResult";
 
-const ResultCase = ({ userInfo, onSetUserInfo }) => {
+const ResultCase = ({ userInfo, onUserInfoChange }) => {
   switch (userInfo.status) {
     case "pending":
       return <PendingResult />;
     case "resolved":
       return (
-        <Result userInfoData={userInfo.data} onSetUserInfo={onSetUserInfo} />
+        <Result
+          userInfoData={userInfo.data}
+          onUserInfoChange={onUserInfoChange}
+        />
       );
     case "rejected":
       return <RejectedResult />;

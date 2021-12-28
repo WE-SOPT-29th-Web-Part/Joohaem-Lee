@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-const Result = ({ userInfoData, onSetUserInfo }) => {
+const Result = ({ userInfoData, onUserInfoChange }) => {
   return (
     <StCard>
-      <button onClick={() => onSetUserInfo(null, "idle")}>닫기</button>
+      <button onClick={() => onUserInfoChange(null, "idle")}>닫기</button>
       <img src={userInfoData.avatar_url} alt="user" />
       <h3>{userInfoData.name}</h3>
       <h4>{userInfoData.login}</h4>

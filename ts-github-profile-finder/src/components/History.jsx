@@ -2,19 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-function History({ history, onHistoryChange, userInfo, onSetUserInfo }) {
+function History({ history, onHistoryChange, userInfo, onUserInfoChange }) {
   const selectUser = async (e) => {
     const _targetUser = e.target.innerText;
     // getApi-----
-    onSetUserInfo(userInfo, "pending");
+    onUserInfoChange(userInfo, "pending");
     try {
       const { data } = await axios.get(
         `https://api.github.com/users/${_targetUser}`
       );
-      onSetUserInfo({ ...userInfo, data }, "resolved");
+      onUserInfoChange({ ...userInfo, data }, "resolved");
     } catch (error) {
       console.log(`error : `, error);
-      onSetUserInfo({ ...userInfo, data: null }, "rejected");
+      onUserInfoChange({ ...userInfo, data: null }, "rejected");
     }
     // -----getApi
   };
