@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const PendingResult = () => {
-  return <Card>Pending...</Card>;
+  return <StCard>Pending...</StCard>;
 };
 
 export default PendingResult;
 
-const Card = styled.article`
+const StCard = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;

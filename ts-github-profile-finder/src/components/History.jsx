@@ -26,22 +26,22 @@ function History({ history, setHistory, userInfo, onSetUserInfo }) {
   };
 
   return (
-    <Wrapper>
+    <StWrapper>
       {history.map((history, index) => (
-        <List key={`hisory-${index}`}>
+        <StList key={`hisory-${index}`}>
           <p onClick={selectUser}>{history}</p>
           <button type="button" onClick={removeUser}>
             ❌
           </button>
-        </List>
+        </StList>
       ))}
-    </Wrapper>
+    </StWrapper>
   );
 }
 
 export default History;
 
-const Wrapper = styled.ul`
+const StWrapper = styled.ul`
   position: absolute;
   top: 80%;
   left: 1rem;
@@ -52,7 +52,7 @@ const Wrapper = styled.ul`
   color: #e5e6e7;
 `;
 
-const List = styled.li`
+const StList = styled.li`
   padding: 8px 16px;
   display: flex;
   justify-content: space-between;

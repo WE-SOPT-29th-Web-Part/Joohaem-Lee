@@ -48,8 +48,8 @@ const SearchBar = ({ userInfo, onSetUserInfo }) => {
   };
 
   return (
-    <Form onSubmit={getApi}>
-      <Input
+    <StForm onSubmit={getApi}>
+      <StInput
         value={user}
         onChange={(e) => setUser(e.target.value)}
         type="text"
@@ -61,17 +61,17 @@ const SearchBar = ({ userInfo, onSetUserInfo }) => {
         userInfo={userInfo}
         onSetUserInfo={onSetUserInfo}
       />
-    </Form>
+    </StForm>
   );
 };
 
 export default SearchBar;
 
-const Form = styled.form`
+const StForm = styled.form`
   position: relative;
 `;
 
-const Input = styled.input`
+const StInput = styled.input`
   width: 100%;
   height: 4rem;
 

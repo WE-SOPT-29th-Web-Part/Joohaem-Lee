@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const RejectedResult = () => {
-  return <Card>사용자가 없습니다.</Card>;
+  return <StCard>사용자가 없습니다.</StCard>;
 };
 
 export default RejectedResult;
 
-const Card = styled.article`
+const StCard = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;

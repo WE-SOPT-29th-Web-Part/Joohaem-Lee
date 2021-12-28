@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Result = ({ userInfoData, onSetUserInfo }) => {
   return (
-    <Card>
+    <StCard>
       <button onClick={() => onSetUserInfo(null, "idle")}>닫기</button>
       <img src={userInfoData.avatar_url} alt="user" />
       <h3>{userInfoData.name}</h3>
@@ -11,7 +11,7 @@ const Result = ({ userInfoData, onSetUserInfo }) => {
       <a href={userInfoData.html_url} target="_blank" rel="noopener noreferrer">
         Visit Github
       </a>
-      <Ul>
+      <StUl>
         <li>
           <strong>Followers</strong>
           {userInfoData.followers}
@@ -24,14 +24,14 @@ const Result = ({ userInfoData, onSetUserInfo }) => {
           <strong>Repos</strong>
           {userInfoData.public_repos}
         </li>
-      </Ul>
-    </Card>
+      </StUl>
+    </StCard>
   );
 };
 
 export default Result;
 
-const Card = styled.article`
+const StCard = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,7 +98,7 @@ const Card = styled.article`
   }
 `;
 
-const Ul = styled.ul`
+const StUl = styled.ul`
   display: flex;
   justify-content: space-between;
   width: 100%;
