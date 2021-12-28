@@ -2,8 +2,18 @@ import React from "react";
 import PendingResult from "./PendingResult";
 import Result from "./Result";
 import RejectedResult from "./RejectedResult";
+import { UserInfo, UserInfoStatus } from "types";
 
-const ResultCase = ({ userInfo, onUserInfoChange }) => {
+interface ResultCaseProps {
+  userInfo: UserInfo;
+  onUserInfoChange: (
+    targetUserInfo: UserInfo,
+    targetStatus: UserInfoStatus
+  ) => void;
+}
+
+const ResultCase = (props: ResultCaseProps) => {
+  const { userInfo, onUserInfoChange } = props;
   switch (userInfo.status) {
     case "pending":
       return <PendingResult />;
