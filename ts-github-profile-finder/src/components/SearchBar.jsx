@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
 import styled from "styled-components";
 import axios from "axios";
 import History from "./History.jsx";
 
-const SearchBar = ({ setUserInfo }) => {
+const SearchBar = ({ userInfo, onSetUserInfo }) => {
   const [user, setUser] = useState("");
   const [history, setHistory] = useState([]);
 
@@ -32,26 +33,13 @@ const SearchBar = ({ setUserInfo }) => {
     e.preventDefault();
 
     // getApi-----
-    setUserInfo((currentUserInfo) => ({
-      ...currentUserInfo,
-      status: "pending",
-    }));
-
+    onSetUserInfo(userInfo, "pending");
     try {
       const { data } = await axios.get(`https://api.github.com/users/${user}`);
-
-      setUserInfo((currentUserInfo) => ({
-        ...currentUserInfo,
-        data,
-        status: "resolved",
-      }));
+      onSetUserInfo({ ...userInfo, data }, "resolved");
     } catch (error) {
-      setUserInfo((currentUserInfo) => ({
-        ...currentUserInfo,
-        data: null,
-        status: "rejected",
-      }));
       console.log(`error : `, error);
+      onSetUserInfo({ ...userInfo, data: null }, "rejected");
     }
     // -----getApi
 
@@ -70,7 +58,8 @@ const SearchBar = ({ setUserInfo }) => {
       <History
         history={history}
         setHistory={setHistory}
-        setUserInfo={setUserInfo}
+        userInfo={userInfo}
+        onSetUserInfo={onSetUserInfo}
       />
     </Form>
   );

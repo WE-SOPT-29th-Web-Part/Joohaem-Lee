@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-const Result = ({ userInfoData, setUserInfo }) => {
+const Result = ({ userInfoData, onSetUserInfo }) => {
   return (
     <Card>
-      <button onClick={() => setUserInfo({})}>닫기</button>
+      <button onClick={() => onSetUserInfo(null, "idle")}>닫기</button>
       <img src={userInfoData.avatar_url} alt="user" />
       <h3>{userInfoData.name}</h3>
       <h4>{userInfoData.login}</h4>
+      <p>{userInfoData.bio}</p>
       <a href={userInfoData.html_url} target="_blank" rel="noopener noreferrer">
         Visit Github
       </a>
