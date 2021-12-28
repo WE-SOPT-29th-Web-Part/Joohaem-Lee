@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { UserInfo, UserInfoStatus } from "types";
 
 import styled from "styled-components";
 import axios from "axios";
 import History from "./History";
+
+import { UserInfo, UserInfoStatus } from "types";
 
 interface SearchBarProps {
   userInfo: UserInfo;

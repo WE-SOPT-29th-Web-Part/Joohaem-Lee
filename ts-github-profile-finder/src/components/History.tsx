@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
+
 import { UserInfo, UserInfoStatus } from "types";
 
 interface HistoryProps {

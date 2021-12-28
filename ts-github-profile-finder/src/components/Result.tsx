@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { UserInfo, UserInfoData, UserInfoStatus } from "types";
 
 interface ResultCaseProps {

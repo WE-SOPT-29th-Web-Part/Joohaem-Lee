@@ -1,7 +1,7 @@
-import React from "react";
 import PendingResult from "./PendingResult";
 import Result from "./Result";
 import RejectedResult from "./RejectedResult";
+
 import { UserInfo, UserInfoStatus } from "types";
 
 interface ResultCaseProps {

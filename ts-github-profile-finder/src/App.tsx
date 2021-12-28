@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { UserInfo, UserInfoStatus } from "types";
 
 import Header from "components/Header";
 import SearchBar from "components/SearchBar";
 import ResultCase from "components/ResultCase";
+
+import { UserInfo, UserInfoStatus } from "types";
 
 function App() {
   const [userInfo, setUserInfo] = useState<UserInfo>({
