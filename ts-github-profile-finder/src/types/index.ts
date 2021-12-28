@@ -1,3 +1,10 @@
+export type UserInfoStatus = "idle" | "pending" | "resolved" | "rejected";
+
+export interface UserInfo {
+  data: UserInfoData | null;
+  status: UserInfoStatus;
+}
+
 export interface UserInfoData {
   avatar_url: string;
   name: string;

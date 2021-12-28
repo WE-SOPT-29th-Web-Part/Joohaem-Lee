@@ -1,14 +1,25 @@
 import { useState, useEffect } from "react";
+import { UserInfo, UserInfoStatus } from "types";
 
 import styled from "styled-components";
 import axios from "axios";
 import History from "./History.jsx";
 
-const SearchBar = ({ userInfo, onUserInfoChange }) => {
-  const [user, setUser] = useState("");
-  const [history, setHistory] = useState([]);
+interface SearchBarProps {
+  userInfo: UserInfo;
+  onUserInfoChange: (
+    targetUserInfo: UserInfo,
+    targetStatus: UserInfoStatus
+  ) => void;
+}
 
-  const getHistory = (userName) => {
+const SearchBar = (props: SearchBarProps) => {
+  const { userInfo, onUserInfoChange } = props;
+
+  const [user, setUser] = useState("");
+  const [history, setHistory] = useState<string[]>([]);
+
+  const getHistory = (userName: string) => {
     if (history.length >= 3) return;
     if (history.includes(userName)) return;
     setHistory((currentHistory) => {
@@ -18,8 +29,8 @@ const SearchBar = ({ userInfo, onUserInfoChange }) => {
 
   // when mouting
   useEffect(() => {
-    localStorage.getItem("history") &&
-      setHistory(JSON.parse(localStorage.getItem("history")));
+    const localHistory = localStorage.getItem("history");
+    localHistory && setHistory(JSON.parse(localHistory));
   }, []);
 
   // when mounting && of history
@@ -29,7 +40,7 @@ const SearchBar = ({ userInfo, onUserInfoChange }) => {
 
   // ------------------------------------------------------------------------
 
-  const getApi = async (e) => {
+  const getApi = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // getApi-----
@@ -47,7 +58,7 @@ const SearchBar = ({ userInfo, onUserInfoChange }) => {
     setUser("");
   };
 
-  const handleHistory = (newHistories) => {
+  const handleHistory = (newHistories: string[]) => {
     setHistory(newHistories);
   };
 
