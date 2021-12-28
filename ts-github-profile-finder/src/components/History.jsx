@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-function History({ history, setHistory, userInfo, onSetUserInfo }) {
+function History({ history, onHistoryChange, userInfo, onSetUserInfo }) {
   const selectUser = async (e) => {
     const _targetUser = e.target.innerText;
     // getApi-----
@@ -22,7 +22,7 @@ function History({ history, setHistory, userInfo, onSetUserInfo }) {
   const removeUser = (e) => {
     const _targetText = e.target.previousSibling.innerText;
     const _tempHistory = history.filter((el) => el !== _targetText);
-    setHistory(_tempHistory);
+    onHistoryChange(_tempHistory);
   };
 
   return (

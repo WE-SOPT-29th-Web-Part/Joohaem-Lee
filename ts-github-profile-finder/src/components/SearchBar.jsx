@@ -47,6 +47,10 @@ const SearchBar = ({ userInfo, onSetUserInfo }) => {
     setUser("");
   };
 
+  const handleHistory = (newHistories) => {
+    setHistory(newHistories);
+  };
+
   return (
     <StForm onSubmit={getApi}>
       <StInput
@@ -57,7 +61,7 @@ const SearchBar = ({ userInfo, onSetUserInfo }) => {
       />
       <History
         history={history}
-        setHistory={setHistory}
+        onHistoryChange={handleHistory}
         userInfo={userInfo}
         onSetUserInfo={onSetUserInfo}
       />
