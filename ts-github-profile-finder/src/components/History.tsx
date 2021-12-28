@@ -1,10 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { UserInfo, UserInfoStatus } from "types";
 
-function History({ history, onHistoryChange, userInfo, onUserInfoChange }) {
-  const selectUser = async (e) => {
-    const _targetUser = e.target.innerText;
+interface HistoryProps {
+  history: string[];
+  onHistoryChange: (newHistories: string[]) => void;
+  userInfo: UserInfo;
+  onUserInfoChange: (
+    targetUserInfo: UserInfo,
+    targetStatus: UserInfoStatus
+  ) => void;
+}
+
+function History(props: HistoryProps) {
+  const { history, onHistoryChange, userInfo, onUserInfoChange } = props;
+
+  const selectUser = async (
+    e: React.MouseEvent<HTMLParagraphElement, MouseEvent>
+  ) => {
+    const _targetUser = e.currentTarget.innerText;
     // getApi-----
     onUserInfoChange(userInfo, "pending");
     try {
@@ -19,8 +34,10 @@ function History({ history, onHistoryChange, userInfo, onUserInfoChange }) {
     // -----getApi
   };
 
-  const removeUser = (e) => {
-    const _targetText = e.target.previousSibling.innerText;
+  const removeUser = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    const _targetNode = e.currentTarget.previousSibling;
+    if (!(_targetNode instanceof HTMLElement)) return;
+    const _targetText = _targetNode.innerText;
     const _tempHistory = history.filter((el) => el !== _targetText);
     onHistoryChange(_tempHistory);
   };

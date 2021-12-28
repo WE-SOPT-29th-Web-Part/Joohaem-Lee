@@ -29,8 +29,8 @@ const SearchBar = (props: SearchBarProps) => {
 
   // when mouting
   useEffect(() => {
-    const localHistory = localStorage.getItem("history");
-    localHistory && setHistory(JSON.parse(localHistory));
+    const _localHistory = localStorage.getItem("history");
+    _localHistory && setHistory(JSON.parse(_localHistory));
   }, []);
 
   // when mounting && of history
