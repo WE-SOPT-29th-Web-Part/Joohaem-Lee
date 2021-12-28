@@ -1,15 +1,4 @@
-import React from "react";
 import styled from "styled-components";
-
-// interface UserInfoData {
-//   avatar_url: string;
-//   name: string;
-//   login: string;
-//   html_url: string;
-//   followers: number;
-//   following: number;
-//   public_repos: number;
-// }
 
 const Result = ({ userInfoData, setUserInfo }) => {
   return (
