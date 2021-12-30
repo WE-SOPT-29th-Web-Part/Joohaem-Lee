@@ -28,6 +28,23 @@ const SearchBar = (props: SearchBarProps) => {
     });
   };
 
+  const handleHistory = (newHistories: string[]) => {
+    setHistory(newHistories);
+  };
+
+  // const isStringArray = (arr: any[]): arr is string[] =>
+  //   arr.every((elem) => typeof elem === "string");
+  // const JSONParseWithString = (json: string): string[] => {
+  //   try {
+  //     const parseResult = JSON.parse(json);
+  //     if (!(parseResult instanceof Array)) return [];
+  //     if (!isStringArray(parseResult)) return [];
+  //     return parseResult;
+  //   } catch (error) {
+  //     throw Error("failed to parse JSON");
+  //   }
+  // };
+
   // when mouting
   useEffect(() => {
     const _localHistory = localStorage.getItem("history");
@@ -57,10 +74,6 @@ const SearchBar = (props: SearchBarProps) => {
 
     getHistory(user);
     setUser("");
-  };
-
-  const handleHistory = (newHistories: string[]) => {
-    setHistory(newHistories);
   };
 
   return (
