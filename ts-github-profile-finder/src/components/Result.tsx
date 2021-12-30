@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { UserInfo, UserInfoData, UserInfoStatus } from "types";
 
 interface ResultCaseProps {
-  userInfoData: UserInfoData | null;
+  userInfoData: UserInfoData;
   onUserInfoChange: (
     targetUserInfo: UserInfo | null,
     targetStatus: UserInfoStatus
@@ -15,25 +15,21 @@ const Result = (props: ResultCaseProps) => {
   return (
     <StCard>
       <button onClick={() => onUserInfoChange(null, "idle")}>닫기</button>
-      <img src={userInfoData?.avatar_url} alt="user" />
-      <h3>{userInfoData?.name}</h3>
-      <h4>{userInfoData?.login}</h4>
-      <p>{userInfoData?.bio}</p>
-      <a
-        href={userInfoData?.html_url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <img src={userInfoData.avatar_url} alt="user" />
+      <h3>{userInfoData.name}</h3>
+      <h4>{userInfoData.login}</h4>
+      <p>{userInfoData.bio}</p>
+      <a href={userInfoData.html_url} target="_blank" rel="noopener noreferrer">
         Visit Github
       </a>
       <StUl>
         <li>
           <strong>Followers</strong>
-          {userInfoData?.followers}
+          {userInfoData.followers}
         </li>
         <li>
           <strong>Following</strong>
-          {userInfoData?.following}
+          {userInfoData.following}
         </li>
         <li>
           <strong>Repos</strong>

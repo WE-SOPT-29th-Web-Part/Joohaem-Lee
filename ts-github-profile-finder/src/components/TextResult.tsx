@@ -1,7 +1,12 @@
 import styled from "styled-components";
 
-const PendingResult = () => {
-  return <StCard>Pending...</StCard>;
+interface TextResultProps {
+  textProp: string;
+}
+
+const PendingResult = (props: TextResultProps) => {
+  console.log(props);
+  return <StCard>{props.textProp}</StCard>;
 };
 
 export default PendingResult;
