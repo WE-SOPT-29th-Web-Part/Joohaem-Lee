@@ -5,6 +5,8 @@ export interface UserInfo {
   status: UserInfoStatus;
 }
 
+// export type UserInfo = { status: "idle" } | { status: "pending" } | { status: "resolved", data: UserInfoData } | { status: "rejected" };
+
 export interface UserInfoData {
   avatar_url: string;
   name: string;
