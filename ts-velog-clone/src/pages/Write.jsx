@@ -59,16 +59,16 @@ const Write = () => {
   };
 
   return (
-    <StyledMain>
+    <StMain>
       <ArticleTitle title={articleData.title} onDataChange={handleDataChange} />
-      <StyledHr noshade />
+      <StHr noshade />
       <ArticleTags
         tags={articleData.tags}
         articleData={articleData}
         onAddTag={handleTagAdd}
         onDeleteTag={handleTagDelete}
       />
-      <StyledHr noshade />
+      <StHr noshade />
       <ArticleBody body={articleData.body} onDataChange={handleDataChange} />
       <ArticleFooter setIsPublished={setIsPublished} />
       {isPublished && (
@@ -79,17 +79,17 @@ const Write = () => {
           createArticle={createArticle}
         />
       )}
-    </StyledMain>
+    </StMain>
   );
 };
 
-const StyledMain = styled.main`
+const StMain = styled.main`
   width: 80%;
   height: 100%;
   padding: 2em;
 `;
 
-const StyledHr = styled.hr`
+const StHr = styled.hr`
   margin: 24px 0 16px 0;
   width: 64px;
   height: 6px;

@@ -17,29 +17,29 @@ const ArticleTags = ({ tags, articleData, onAddTag, onDeleteTag }) => {
     }
   };
   return (
-    <Tags>
+    <StTags>
       {tags.map((tag, idx) => (
-        <Tag
+        <StTag
           key={`tag-${idx}`}
           onClick={(e) => onDeleteTag(e.target.innerText)}
         >
           {tag}
-        </Tag>
+        </StTag>
       ))}
-      <Input
+      <StInput
         type="text"
         onKeyPress={handleKeyPress}
         placeholder="태그를 입력하세요"
       />
-    </Tags>
+    </StTags>
   );
 };
 
-export const Tags = styled.section`
+export const StTags = styled.section`
   display: flex;
   flex-wrap: wrap;
 `;
-export const Tag = styled.span`
+export const StTag = styled.span`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@ export const Tag = styled.span`
     cursor: pointer;
   }
 `;
-const Input = styled.input`
+const StInput = styled.input`
   display: inline;
   min-width: 8rem;
   margin-bottom: 0.75rem;

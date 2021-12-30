@@ -17,28 +17,28 @@ const ArticlesContainer = () => {
   }, []);
 
   return (
-    <Section>
+    <StSection>
       {articlesGetting.length !== 0 ? (
         articlesGetting.map((article) => (
           <ArticleCard key={`article-${article.id}`} article={article} />
         ))
       ) : (
-        <NoArticleText>게시글이 없습니다.</NoArticleText>
+        <StNoArticleText>게시글이 없습니다.</StNoArticleText>
       )}
-    </Section>
+    </StSection>
   );
 };
 
 export default ArticlesContainer;
 
-const Section = styled.section`
+const StSection = styled.section`
   width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column-reverse;
 `;
 
-const NoArticleText = styled.div`
+const StNoArticleText = styled.div`
   margin-top: 3rem;
   text-align: center;
   font-size: 1.25rem;

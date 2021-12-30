@@ -8,27 +8,27 @@ import { Tag } from "../Write/ArticleTags";
 const ArticlesCard = ({ article }) => {
   const { id, title, summary, tags, thumbnail, date } = article;
   return (
-    <Article>
+    <StArticle>
       <Link to={`article/${id}`} state={article}>
         {thumbnail && (
           <ImageWrapper ratio="56%">
-            <Img src={thumbnail} alt="이미지" />
+            <StImg src={thumbnail} alt="이미지" />
           </ImageWrapper>
         )}
-        <H3>{title}</H3>
+        <StH3>{title}</StH3>
       </Link>
-      <H4>{summary}</H4>
-      <CustomTags>
+      <StH4>{summary}</StH4>
+      <StCustomTags>
         {tags.map((tag) => (
-          <CustomTag key={`tag-${tag}`}>{tag}</CustomTag>
+          <StCustomTag key={`tag-${tag}`}>{tag}</StCustomTag>
         ))}
-      </CustomTags>
-      <Date>{date}</Date>
-    </Article>
+      </StCustomTags>
+      <StDate>{date}</StDate>
+    </StArticle>
   );
 };
 
-const Article = styled.article`
+const StArticle = styled.article`
   display: flex;
   flex-direction: column;
   margin: 2rem 0;
@@ -41,17 +41,17 @@ const Article = styled.article`
   }
 `;
 
-const Img = styled.img`
+const StImg = styled.img`
   border-radius: 0.25rem;
 `;
 
-const H3 = styled.h3`
+const StH3 = styled.h3`
   margin-top: 1rem;
   font-size: 1.25rem;
   font-weight: 700;
 `;
 
-const H4 = styled.h4`
+const StH4 = styled.h4`
   font-weight: 400;
   /* 넘어가는 텍스트 숨기기 */
   display: -webkit-box;
@@ -62,11 +62,11 @@ const H4 = styled.h4`
   word-break: break-all;
 `;
 
-const CustomTags = styled(Tags)`
+const StCustomTags = styled(Tags)`
   justify-content: end;
 `;
 
-const CustomTag = styled(Tag)`
+const StCustomTag = styled(Tag)`
   height: 1.5rem;
   padding: 0 0.75rem;
   font-size: 0.75rem;
@@ -76,7 +76,7 @@ const CustomTag = styled(Tag)`
   }
 `;
 
-const Date = styled.p`
+const StDate = styled.p`
   color: var(--main-gray-color);
   font-size: 0.75rem;
 `;

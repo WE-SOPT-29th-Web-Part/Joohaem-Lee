@@ -4,17 +4,17 @@ import styled from "styled-components";
 
 const ArticleFooter = ({ setIsPublished }) => {
   return (
-    <Section>
-      <BLink to="..">
-        <BIcon className="material-icons">arrow_back</BIcon>
+    <StSection>
+      <StBLink to="..">
+        <StBIcon className="material-icons">arrow_back</StBIcon>
         뒤로
-      </BLink>
-      <Button onClick={() => setIsPublished(true)}>출간하기</Button>
-    </Section>
+      </StBLink>
+      <StButton onClick={() => setIsPublished(true)}>출간하기</StButton>
+    </StSection>
   );
 };
 
-const Section = styled.section`
+const StSection = styled.section`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -29,7 +29,7 @@ const Section = styled.section`
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 `;
 
-const BLink = styled(Link)`
+const StBLink = styled(Link)`
   width: 6rem;
   height: 2.5rem;
   font-size: 1.125rem;
@@ -43,11 +43,11 @@ const BLink = styled(Link)`
   align-items: center;
 `;
 
-const BIcon = styled.span`
+const StBIcon = styled.span`
   margin-right: 5px;
 `;
 
-const Button = styled.button`
+const StButton = styled.button`
   width: 6rem;
   height: 2.5rem;
   background-color: var(--main-green-color);

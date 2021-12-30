@@ -23,19 +23,19 @@ const PublishSummary = ({ summary, onDataChange }) => {
 
   return (
     <>
-      <Textarea
+      <StTextarea
         onChange={handleChange}
         placeholder="당신의 포스트를 짧게 소개해보세요."
         value={summary}
       />
-      <TextCnt>{textCnt}/150</TextCnt>
+      <StTextCnt>{textCnt}/150</StTextCnt>
     </>
   );
 };
 
 export default PublishSummary;
 
-const Textarea = styled.textarea`
+const StTextarea = styled.textarea`
   all: unset;
   width: 90%;
   height: 10rem;
@@ -47,7 +47,7 @@ const Textarea = styled.textarea`
   overflow-wrap: break-word;
 `;
 
-const TextCnt = styled.p`
+const StTextCnt = styled.p`
   color: var(--main-gray-color);
   font-size: 0.75rem;
   text-align: right;

@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const ImageWrapper = ({ ratio, children }) => {
   // ratio 56%
-  return <StyledImgWrapper ratio={ratio}>{children}</StyledImgWrapper>;
+  return <StImgWrapper ratio={ratio}>{children}</StImgWrapper>;
 };
 
 export default ImageWrapper;
 
 // 50% -> 가로 세로 2:1
-const StyledImgWrapper = styled.div`
+const StImgWrapper = styled.div`
   padding-top: ${({ ratio }) => ratio};
   position: relative;
 

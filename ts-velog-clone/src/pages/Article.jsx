@@ -5,8 +5,8 @@ import ArticleOptions from "../components/article/ArticleOptions";
 import Header from "../components/common/Header";
 import ImageWrapper from "../components/common/ImageWrapper";
 import Profile from "../components/Home/Profile";
-import { Tags } from "../components/Write/ArticleTags";
-import { Tag } from "../components/Write/ArticleTags";
+import { StTags } from "../components/Write/ArticleTags";
+import { StTag } from "../components/Write/ArticleTags";
 
 const Article = () => {
   const location = useLocation();
@@ -14,34 +14,34 @@ const Article = () => {
   const { title, body, thumbnail, date, tags } = article;
 
   return (
-    <StyledArticleWrapper>
+    <StArticleWrapper>
       <Header />
       <StyledH1>{title}</StyledH1>
       <ArticleOptions article={article} />
-      <StyledInfoWrapper>
-        <StyledName>이주함</StyledName>
-        <StyledDelimeter>•</StyledDelimeter>
+      <StInfoWrapper>
+        <StName>이주함</StName>
+        <StDelimeter>•</StDelimeter>
         <span>{date}</span>
-      </StyledInfoWrapper>
-      <Tags>
+      </StInfoWrapper>
+      <StTags>
         {tags.map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
+          <StTag key={tag}>{tag}</StTag>
         ))}
-      </Tags>
+      </StTags>
       {thumbnail && (
         <ImageWrapper ratio="50%">
           <img src={thumbnail} alt="thumbnail" />
         </ImageWrapper>
       )}
-      <StyledContent>{body}</StyledContent>
+      <StContent>{body}</StContent>
       <Profile />
-    </StyledArticleWrapper>
+    </StArticleWrapper>
   );
 };
 
 export default Article;
 
-const StyledArticleWrapper = styled.section`
+const StArticleWrapper = styled.section`
   max-width: 768px;
   margin: 0 auto;
 `;
@@ -55,18 +55,18 @@ const StyledH1 = styled.h1`
   word-break: keep-all;
 `;
 
-const StyledInfoWrapper = styled.section`
+const StInfoWrapper = styled.section`
   margin: 1rem 0;
 `;
 
-const StyledName = styled.span`
+const StName = styled.span`
   font-weight: 700;
 `;
 
-const StyledDelimeter = styled.span`
+const StDelimeter = styled.span`
   margin: 0 0.5rem;
 `;
 
-const StyledContent = styled.article`
+const StContent = styled.article`
   margin: 2rem 0;
 `;

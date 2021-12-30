@@ -15,30 +15,27 @@ const PublishScreen = ({
   };
 
   return (
-    <StyledPublishedWrapper>
-      <StyledLeftSection>
+    <StPublishedWrapper>
+      <StLeftSection>
         <PublishImage thumbnail={thumbnail} onDataChange={onDataChange} />
         <PublishSummary summary={summary} onDataChange={onDataChange} />
-      </StyledLeftSection>
-      <StyledRightSection>
+      </StLeftSection>
+      <StRightSection>
         <div>
-          <StyledH3>공개 설정</StyledH3>-<StyledH3>URL 설정</StyledH3>-
-          <StyledH3>시리즈 설정</StyledH3>-
+          <StH3>공개 설정</StH3>-<StH3>URL 설정</StH3>-<StH3>시리즈 설정</StH3>-
         </div>
-        <StyledBtnWrapper>
-          <StyledCancelBtn onClick={() => setIsPublished(false)}>
-            취소
-          </StyledCancelBtn>
-          <StyledPublishBtn onClick={handlePost}>출간하기</StyledPublishBtn>
-        </StyledBtnWrapper>
-      </StyledRightSection>
-    </StyledPublishedWrapper>
+        <StBtnWrapper>
+          <StCancelBtn onClick={() => setIsPublished(false)}>취소</StCancelBtn>
+          <StPublishBtn onClick={handlePost}>출간하기</StPublishBtn>
+        </StBtnWrapper>
+      </StRightSection>
+    </StPublishedWrapper>
   );
 };
 
 export default PublishScreen;
 
-const StyledPublishedWrapper = styled.div`
+const StPublishedWrapper = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -69,22 +66,22 @@ const StyledPublishedWrapper = styled.div`
   }
 `;
 
-const StyledLeftSection = styled.section`
+const StLeftSection = styled.section`
   border-right: 1px solid var(--main-lightgray-color);
 `;
-const StyledRightSection = styled.section`
+const StRightSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 `;
 
-const StyledH3 = styled.h3`
+const StH3 = styled.h3`
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1rem;
 `;
 
-const StyledBtnWrapper = styled.div`
+const StBtnWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   & > button {
@@ -99,11 +96,11 @@ const StyledBtnWrapper = styled.div`
   }
 `;
 
-const StyledCancelBtn = styled.button`
+const StCancelBtn = styled.button`
   background-color: var(--main-lightgray-color);
   margin-right: 1rem;
 `;
 
-const StyledPublishBtn = styled.button`
+const StPublishBtn = styled.button`
   background-color: var(--main-green-color);
 `;

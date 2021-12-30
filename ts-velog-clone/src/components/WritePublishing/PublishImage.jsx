@@ -29,49 +29,53 @@ const PublishImage = ({ thumbnail, onDataChange }) => {
 
   return (
     <>
-      <H3>포스트 미리보기</H3>
-      <ThumnailWrapper>
+      <StH3>포스트 미리보기</StH3>
+      <StThumnailWrapper>
         {thumbnailImage ? (
           <ImageWrapper ratio="56%">
-            <ThumbnailImage src={thumbnailImage} alt="thumbnail" />
+            <StThumbnailImage src={thumbnailImage} alt="thumbnail" />
           </ImageWrapper>
         ) : (
-          <ThumbnailNone>✖</ThumbnailNone>
+          <StThumbnailNone>✖</StThumbnailNone>
         )}
 
-        <InputWrapper>
-          <InputImage id="thumbnail" type="file" onChange={handleImageChange} />
-          <NoImageBtn onClick={deleteImage}>썸네일 삭제</NoImageBtn>
-          <InputLabel for="thumbnail">썸네일 업로드</InputLabel>
-        </InputWrapper>
-      </ThumnailWrapper>
+        <StInputWrapper>
+          <StInputImage
+            id="thumbnail"
+            type="file"
+            onChange={handleImageChange}
+          />
+          <StNoImageBtn onClick={deleteImage}>썸네일 삭제</StNoImageBtn>
+          <StInputLabel for="thumbnail">썸네일 업로드</StInputLabel>
+        </StInputWrapper>
+      </StThumnailWrapper>
     </>
   );
 };
 
 export default PublishImage;
 
-const H3 = styled.h3`
+const StH3 = styled.h3`
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1rem;
 `;
 
-const ThumnailWrapper = styled.div`
+const StThumnailWrapper = styled.div`
   width: 100%;
   height: 12rem;
 
   margin-bottom: 2rem;
 `;
 
-const ThumbnailImage = styled.img`
+const StThumbnailImage = styled.img`
   width: 100%;
   height: 100%;
 
   object-fit: contain;
 `;
 
-const ThumbnailNone = styled.div`
+const StThumbnailNone = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,12 +84,12 @@ const ThumbnailNone = styled.div`
   background-color: var(--main-lightgray-color);
 `;
 
-const InputWrapper = styled.div`
+const StInputWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
 
-const InputImage = styled.input`
+const StInputImage = styled.input`
   height: 1px;
   width: 1px;
   position: absolute;
@@ -94,7 +98,7 @@ const InputImage = styled.input`
   margin: 0;
 `;
 
-const NoImageBtn = styled.button`
+const StNoImageBtn = styled.button`
   width: 7rem;
   height: 2.5rem;
   color: white;
@@ -107,7 +111,7 @@ const NoImageBtn = styled.button`
   }
 `;
 
-const InputLabel = styled.label`
+const StInputLabel = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;

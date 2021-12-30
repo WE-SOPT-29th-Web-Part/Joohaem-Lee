@@ -1,36 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 import userLogo from "../../assets/images/snupi.jpg";
-import { ReactComponent as GithubIcon } from "../../assets/icons/github.svg";
-import { ReactComponent as HomeIcon } from "../../assets/icons/home.svg";
-import { ReactComponent as MailIcon } from "../../assets/icons/mail.svg";
+import { ReactComponent as IcGithub } from "../../assets/icons/github.svg";
+import { ReactComponent as IcHome } from "../../assets/icons/home.svg";
+import { ReactComponent as IcMail } from "../../assets/icons/mail.svg";
 
 const Profile = () => {
   return (
-    <Section>
-      <UserIMG src={userLogo} width="128px" alt="user" />
+    <StSection>
+      <StUserIMG src={userLogo} width="128px" alt="user" />
       <div>
-        <Name>SNUPI</Name>
-        <LinkWrapper>
-          <UserLink href="https://github.com/joohaem" target="blank">
-            <GithubIcon />
-          </UserLink>
-          <UserLink
+        <StName>SNUPI</StName>
+        <StLinkWrapper>
+          <StUserLink href="https://github.com/joohaem" target="blank">
+            <IcGithub />
+          </StUserLink>
+          <StUserLink
             href="https://xenodochial-wright-ed3962.netlify.app/#/"
             target="blank"
           >
-            <HomeIcon />
-          </UserLink>
-          <UserLink href="/">
-            <MailIcon />
-          </UserLink>
-        </LinkWrapper>
+            <IcHome />
+          </StUserLink>
+          <StUserLink href="/">
+            <IcMail />
+          </StUserLink>
+        </StLinkWrapper>
       </div>
-    </Section>
+    </StSection>
   );
 };
 
-const Section = styled.section`
+const StSection = styled.section`
   width: 80%;
   height: 10rem;
   margin: 2rem auto;
@@ -42,23 +42,23 @@ const Section = styled.section`
   border-bottom: 1px solid var(--main-lightgray-color);
 `;
 
-const UserIMG = styled.img`
+const StUserIMG = styled.img`
   border-radius: 50%;
 `;
 
-const Name = styled.p`
+const StName = styled.p`
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0 1.5rem;
 `;
 
-const LinkWrapper = styled.div`
+const StLinkWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: stretch;
 `;
 
-const UserLink = styled.a`
+const StUserLink = styled.a`
   svg {
     margin: 0.125rem;
     width: 1.25rem;

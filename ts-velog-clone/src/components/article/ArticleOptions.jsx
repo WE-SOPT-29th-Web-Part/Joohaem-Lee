@@ -16,17 +16,17 @@ const ArticleOptions = ({ article }) => {
     navigate(`/article/edit/${id}`, { state: article });
   };
   return (
-    <StyledArticleOption>
+    <StArticleOption>
       <button>통계</button>
       <button onClick={hnadleNavigateArticleEdit}>수정</button>
       <button onClick={handleArticleDelete}>삭제</button>
-    </StyledArticleOption>
+    </StArticleOption>
   );
 };
 
 export default ArticleOptions;
 
-const StyledArticleOption = styled.section`
+const StArticleOption = styled.section`
   text-align: right;
   & > button:not(:first-child) {
     margin-left: 0.5rem;

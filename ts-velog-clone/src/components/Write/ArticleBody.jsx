@@ -3,15 +3,15 @@ import styled from "styled-components";
 
 const ArticleBody = ({ body, onDataChange }) => {
   return (
-    <Textarea
+    <StTextarea
       value={body}
       placeholder="당신의 이야기를 적어보세요..."
       onChange={(e) => onDataChange("body", e.target.value)}
-    ></Textarea>
+    ></StTextarea>
   );
 };
 
-const Textarea = styled.textarea`
+const StTextarea = styled.textarea`
   all: unset;
   width: 100%;
   height: 10rem;
