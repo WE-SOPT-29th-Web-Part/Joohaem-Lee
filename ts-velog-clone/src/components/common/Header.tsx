@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import userLogo from "../../assets/images/snupi.jpg";
@@ -12,23 +11,23 @@ const Header = () => {
     //   </StyledRight>
     // </header>
 
-    <StyledHeader>
+    <StHeader>
       <Link to="/">LOGO</Link>
-      <Nav>
-        <SearchWrapper>
-          <SearchIcon className="material-icons">search</SearchIcon>
-        </SearchWrapper>
-        <StyledLink to="/write">새 글 작성</StyledLink>
-        <UserWrapper>
-          <UserIMG src={userLogo} width="32px" alt="user" />
+      <StNav>
+        <StSearchWrapper>
+          <StSearchIcon className="material-icons">search</StSearchIcon>
+        </StSearchWrapper>
+        <StLink to="/write">새 글 작성</StLink>
+        <StUserWrapper>
+          <StUserIMG src={userLogo} width="32px" alt="user" />
           <span className="material-icons">arrow_drop_down</span>
-        </UserWrapper>
-      </Nav>
-    </StyledHeader>
+        </StUserWrapper>
+      </StNav>
+    </StHeader>
   );
 };
 
-const StyledHeader = styled.header`
+const StHeader = styled.header`
   height: 64px;
   margin: 0 16px;
   display: flex;
@@ -36,13 +35,13 @@ const StyledHeader = styled.header`
   align-items: center;
 `;
 
-const Nav = styled.nav`
+const StNav = styled.nav`
   height: 40px;
   display: flex;
   align-items: center;
 `;
 
-const SearchWrapper = styled.div`
+const StSearchWrapper = styled.div`
   display: flex;
   vertical-align: center;
   justify-content: center;
@@ -58,11 +57,11 @@ const SearchWrapper = styled.div`
   }
 `;
 
-const SearchIcon = styled.span`
+const StSearchIcon = styled.span`
   margin-top: 8px;
 `;
 
-const StyledLink = styled(Link)`
+const StLink = styled(Link)`
   width: 6em;
   height: 2em;
   display: flex;
@@ -81,11 +80,11 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const UserWrapper = styled.div`
+const StUserWrapper = styled.div`
   margin-left: 1em;
 `;
 
-const UserIMG = styled.img`
+const StUserIMG = styled.img`
   border-radius: 50%;
 `;
 
