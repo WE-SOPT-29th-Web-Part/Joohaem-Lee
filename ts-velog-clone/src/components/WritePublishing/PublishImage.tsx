@@ -57,7 +57,7 @@ const PublishImage = (props: PublishImageProps) => {
             onChange={handleImageChange}
           />
           <StNoImageBtn onClick={deleteImage}>썸네일 삭제</StNoImageBtn>
-          <StInputLabel for="thumbnail">썸네일 업로드</StInputLabel>
+          <StInputLabel htmlFor="thumbnail">썸네일 업로드</StInputLabel>
         </StInputWrapper>
       </StThumnailWrapper>
     </>
