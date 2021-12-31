@@ -1,7 +1,12 @@
-import React from "react";
 import styled from "styled-components";
 
-const ImageWrapper = ({ ratio, children }) => {
+interface ImageWrapperProps {
+  ratio: string;
+  children: JSX.Element;
+}
+
+const ImageWrapper = (props: ImageWrapperProps) => {
+  const { ratio, children } = props;
   // ratio 56%
   return <StImgWrapper ratio={ratio}>{children}</StImgWrapper>;
 };
@@ -9,7 +14,7 @@ const ImageWrapper = ({ ratio, children }) => {
 export default ImageWrapper;
 
 // 50% -> 가로 세로 2:1
-const StImgWrapper = styled.div`
+const StImgWrapper = styled.div<{ ratio: string }>`
   padding-top: ${({ ratio }) => ratio};
   position: relative;
 

@@ -4,7 +4,7 @@ import ImageWrapper from "../common/ImageWrapper";
 import { Link } from "react-router-dom";
 import { StTags } from "../Write/ArticleTags";
 import { StTag } from "../Write/ArticleTags";
-import { ArticleInfo } from "components/types";
+import { ArticleInfo } from "types";
 
 interface ArticlesCardProps {
   article: ArticleInfo;

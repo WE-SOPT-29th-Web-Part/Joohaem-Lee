@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import ArticleCard from "./ArticlesCard";
 import { client } from "../../libs/api";
-import { ArticleInfo } from "components/types";
+import { ArticleInfo } from "types";
 
 const ArticlesContainer = () => {
   const [articlesGetting, setArticlesGetting] = useState<ArticleInfo[]>([]);

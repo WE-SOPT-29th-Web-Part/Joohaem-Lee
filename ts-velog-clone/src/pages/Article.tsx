@@ -1,22 +1,23 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import ArticleOptions from "../components/article/ArticleOptions";
 import Header from "../components/common/Header";
 import ImageWrapper from "../components/common/ImageWrapper";
 import Profile from "../components/Home/Profile";
+
+import { useLocation } from "react-router-dom";
 import { StTags } from "../components/Write/ArticleTags";
 import { StTag } from "../components/Write/ArticleTags";
+import { ArticleInfo } from "types";
 
 const Article = () => {
   const location = useLocation();
-  const article = location.state;
+  const article: ArticleInfo = location.state;
   const { title, body, thumbnail, date, tags } = article;
 
   return (
     <StArticleWrapper>
       <Header />
-      <StyledH1>{title}</StyledH1>
+      <StH1>{title}</StH1>
       <ArticleOptions article={article} />
       <StInfoWrapper>
         <StName>이주함</StName>
@@ -46,7 +47,7 @@ const StArticleWrapper = styled.section`
   margin: 0 auto;
 `;
 
-const StyledH1 = styled.h1`
+const StH1 = styled.h1`
   font-size: 3rem;
   line-height: 1.5;
   letter-spacing: -0.004em;
