@@ -1,10 +1,18 @@
-import React from "react";
 import styled from "styled-components";
+import { arrayChangeType, arrayRemoveType, ArticleInfo } from "types";
 
-const ArticleTags = ({ tags, articleData, onAddTag, onDeleteTag }) => {
-  const handleKeyPress = (e) => {
+interface ArticleTagsProps {
+  tags: string[];
+  articleData: ArticleInfo;
+  onAddTag: arrayChangeType;
+  onDeleteTag: arrayRemoveType;
+}
+
+const ArticleTags = (props: ArticleTagsProps) => {
+  const { tags, articleData, onAddTag, onDeleteTag } = props;
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      const newTag = e.target.value;
+      const newTag = e.currentTarget.value;
       if (articleData.tags.includes(newTag)) return;
       if (newTag === "") return;
       // setArticleData((articleData) => ({
@@ -13,7 +21,7 @@ const ArticleTags = ({ tags, articleData, onAddTag, onDeleteTag }) => {
       // }));
       // 비동기 -> 불변성 유지 필요
       onAddTag("tags", newTag);
-      e.target.value = "";
+      e.currentTarget.value = "";
     }
   };
   return (
@@ -21,7 +29,7 @@ const ArticleTags = ({ tags, articleData, onAddTag, onDeleteTag }) => {
       {tags.map((tag, idx) => (
         <StTag
           key={`tag-${idx}`}
-          onClick={(e) => onDeleteTag(e.target.innerText)}
+          onClick={(e) => onDeleteTag(e.currentTarget.innerText)}
         >
           {tag}
         </StTag>

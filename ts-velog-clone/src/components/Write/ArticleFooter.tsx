@@ -1,15 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { isPublishedChangeType } from "types";
 
-const ArticleFooter = ({ setIsPublished }) => {
+interface ArticleFooterProps {
+  onIsPublishedChange: isPublishedChangeType;
+}
+
+const ArticleFooter = (props: ArticleFooterProps) => {
+  const { onIsPublishedChange } = props;
   return (
     <StSection>
       <StBLink to="..">
         <StBIcon className="material-icons">arrow_back</StBIcon>
         뒤로
       </StBLink>
-      <StButton onClick={() => setIsPublished(true)}>출간하기</StButton>
+      <StButton onClick={() => onIsPublishedChange(true)}>출간하기</StButton>
     </StSection>
   );
 };

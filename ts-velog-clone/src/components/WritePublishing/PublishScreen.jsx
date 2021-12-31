@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import PublishSummary from "./PublishSummary";
 import PublishImage from "./PublishImage";
@@ -6,7 +5,7 @@ import PublishImage from "./PublishImage";
 const PublishScreen = ({
   articleData,
   onDataChange,
-  setIsPublished,
+  onIsPublishedChange,
   createArticle,
 }) => {
   const { thumbnail, summary } = articleData;
@@ -25,7 +24,9 @@ const PublishScreen = ({
           <StH3>공개 설정</StH3>-<StH3>URL 설정</StH3>-<StH3>시리즈 설정</StH3>-
         </div>
         <StBtnWrapper>
-          <StCancelBtn onClick={() => setIsPublished(false)}>취소</StCancelBtn>
+          <StCancelBtn onClick={() => onIsPublishedChange(false)}>
+            취소
+          </StCancelBtn>
           <StPublishBtn onClick={handlePost}>출간하기</StPublishBtn>
         </StBtnWrapper>
       </StRightSection>

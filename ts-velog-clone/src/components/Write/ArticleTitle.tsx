@@ -1,11 +1,17 @@
-import React from "react";
 import styled from "styled-components";
+import { dataChangeType } from "types";
 
-const ArticleTitle = ({ title, onDataChange }) => {
+interface ArticleTitleProps {
+  title: string;
+  onDataChange: dataChangeType;
+}
+
+const ArticleTitle = (props: ArticleTitleProps) => {
+  const { title, onDataChange } = props;
   return (
     <StInput
-      value={title}
       placeholder="제목을 입력하세요"
+      value={title}
       onChange={(e) => onDataChange("title", e.target.value)}
     ></StInput>
   );

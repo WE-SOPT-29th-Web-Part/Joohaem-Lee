@@ -1,7 +1,13 @@
-import React from "react";
 import styled from "styled-components";
+import { dataChangeType } from "types";
 
-const ArticleBody = ({ body, onDataChange }) => {
+interface ArticleBodyProps {
+  body: string;
+  onDataChange: dataChangeType;
+}
+
+const ArticleBody = (props: ArticleBodyProps) => {
+  const { body, onDataChange } = props;
   return (
     <StTextarea
       value={body}
