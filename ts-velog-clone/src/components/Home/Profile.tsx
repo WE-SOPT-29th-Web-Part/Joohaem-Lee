@@ -1,6 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import userLogo from "../../assets/images/snupi.jpg";
+
 import { ReactComponent as IcGithub } from "../../assets/icons/github.svg";
 import { ReactComponent as IcHome } from "../../assets/icons/home.svg";
 import { ReactComponent as IcMail } from "../../assets/icons/mail.svg";

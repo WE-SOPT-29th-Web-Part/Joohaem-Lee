@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { client } from "../../libs/api";
 import ArticleCard from "./ArticlesCard";
+import { client } from "../../libs/api";
+import { ArticleInfo } from "components/types";
 
 const ArticlesContainer = () => {
-  const [articlesGetting, setArticlesGetting] = useState([]);
+  const [articlesGetting, setArticlesGetting] = useState<ArticleInfo[]>([]);
 
   const getArticleData = async () => {
     const { data } = await client.get("/article");

@@ -1,37 +1,40 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
 import { Outlet } from "react-router";
+import styled from "styled-components";
 
 const HomeNav = () => {
   const { pathname } = useLocation();
-  const [navIdx, setNavIdx] = useState(0);
+  const [navIdx, setNavIdx] = useState<number>(0);
 
   return (
     <>
-      <NavWrapper>
-        <Items>
-          <Item selected={pathname === "/"} onClick={() => setNavIdx(0)}>
-            <StyledLink to="">글</StyledLink>
-          </Item>
-          <Item selected={pathname === "/series"} onClick={() => setNavIdx(1)}>
-            <StyledLink to="/series">시리즈</StyledLink>
-          </Item>
-        </Items>
-        <NavUnderline position={navIdx} />
-      </NavWrapper>
+      <StNavWrapper>
+        <StItems>
+          <StItem selected={pathname === "/"} onClick={() => setNavIdx(0)}>
+            <StLink to="">글</StLink>
+          </StItem>
+          <StItem
+            selected={pathname === "/series"}
+            onClick={() => setNavIdx(1)}
+          >
+            <StLink to="/series">시리즈</StLink>
+          </StItem>
+        </StItems>
+        <StNavUnderline position={navIdx} />
+      </StNavWrapper>
       <Outlet />
     </>
   );
 };
 
-const NavWrapper = styled.nav`
+const StNavWrapper = styled.nav`
   position: relative;
   width: 16rem;
   margin: 0 auto;
 `;
 
-const NavUnderline = styled.div`
+const StNavUnderline = styled.div<{ position: number }>`
   position: absolute;
   bottom: 0;
   height: 3px;
@@ -43,12 +46,12 @@ const NavUnderline = styled.div`
 
 // -------------- 위까지 HomeNav box ---------------
 
-const Items = styled.ul`
+const StItems = styled.ul`
   display: flex;
   justify-content: center;
 `;
 
-const Item = styled.li`
+const StItem = styled.li<{ selected: boolean }>`
   width: 8rem;
   height: 3rem;
   font-size: 1.125rem;
@@ -59,7 +62,7 @@ const Item = styled.li`
     selected ? "var(--main-green-color)" : "var(--main-gray-color)"};
 `;
 
-const StyledLink = styled(Link)`
+const StLink = styled(Link)`
   width: 100%;
   height: 100%;
 

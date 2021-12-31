@@ -1,11 +1,17 @@
-import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import ImageWrapper from "../common/ImageWrapper";
-import { Tags } from "../Write/ArticleTags";
-import { Tag } from "../Write/ArticleTags";
 
-const ArticlesCard = ({ article }) => {
+import { Link } from "react-router-dom";
+import { StTags } from "../Write/ArticleTags";
+import { StTag } from "../Write/ArticleTags";
+import { ArticleInfo } from "components/types";
+
+interface ArticlesCardProps {
+  article: ArticleInfo;
+}
+
+const ArticlesCard = (props: ArticlesCardProps) => {
+  const { article } = props;
   const { id, title, summary, tags, thumbnail, date } = article;
   return (
     <StArticle>
@@ -62,11 +68,11 @@ const StH4 = styled.h4`
   word-break: break-all;
 `;
 
-const StCustomTags = styled(Tags)`
+const StCustomTags = styled(StTags)`
   justify-content: end;
 `;
 
-const StCustomTag = styled(Tag)`
+const StCustomTag = styled(StTag)`
   height: 1.5rem;
   padding: 0 0.75rem;
   font-size: 0.75rem;
