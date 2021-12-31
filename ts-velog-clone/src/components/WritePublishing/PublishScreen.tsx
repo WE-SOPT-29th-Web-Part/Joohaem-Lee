@@ -1,13 +1,18 @@
 import styled from "styled-components";
 import PublishSummary from "./PublishSummary";
 import PublishImage from "./PublishImage";
+import { ArticleInfo, dataChangeType, isPublishedChangeType } from "types";
 
-const PublishScreen = ({
-  articleData,
-  onDataChange,
-  onIsPublishedChange,
-  createArticle,
-}) => {
+interface PublishScreenProps {
+  articleData: ArticleInfo;
+  onDataChange: dataChangeType;
+  onIsPublishedChange: isPublishedChangeType;
+  createArticle: () => Promise<void>;
+}
+
+const PublishScreen = (props: PublishScreenProps) => {
+  const { articleData, onDataChange, onIsPublishedChange, createArticle } =
+    props;
   const { thumbnail, summary } = articleData;
   const handlePost = async () => {
     createArticle();

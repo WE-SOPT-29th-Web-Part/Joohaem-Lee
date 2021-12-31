@@ -1,15 +1,26 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { imageClient } from "../../libs/api";
 import ImageWrapper from "../common/ImageWrapper";
+import { imageClient } from "../../libs/api";
+import { dataChangeType } from "types";
 
-const PublishImage = ({ thumbnail, onDataChange }) => {
-  const [thumbnailImage, setThumbnailImage] = useState(thumbnail);
+interface PublishImageProps {
+  thumbnail: string;
+  onDataChange: dataChangeType;
+}
+
+const PublishImage = (props: PublishImageProps) => {
+  const { thumbnail, onDataChange } = props;
+  const [thumbnailImage, setThumbnailImage] = useState<string>(thumbnail);
 
   // 서버에 이미지 POST, 정제된 이미지 url을 GET
-  const handleImageChange = async (e) => {
+  const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     // const fileReader = new FileReader();
+
+    // if (!(e.target instanceof HTMLInputElement)) return;
     const formData = new FormData();
+
+    if (e.target.files === null) return;
     const imageFile = e.target.files[0];
 
     formData.append("file", imageFile);

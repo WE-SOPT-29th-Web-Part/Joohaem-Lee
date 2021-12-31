@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
+import { dataChangeType } from "types";
 
-const PublishSummary = ({ summary, onDataChange }) => {
+interface PublishSummaryProps {
+  summary: string;
+  onDataChange: dataChangeType;
+}
+
+const PublishSummary = (props: PublishSummaryProps) => {
+  const { summary, onDataChange } = props;
   const MAX_NUM = 150;
   const [textCnt, setTextCnt] = useState(0);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const target = e.target;
     setTextCnt(target.value.length);
 
